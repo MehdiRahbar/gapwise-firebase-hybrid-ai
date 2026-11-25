@@ -1,0 +1,107 @@
+{
+  "schema_version": "gapwise_preregistered_nano4_native_v1",
+  "frozen_phase": "PHASE_A_BEFORE_RESERVATION",
+  "cases": [
+    {
+      "id": "nd_01_direct_prompt_en",
+      "purpose": "(f) Direct Firebase AI Logic ONLY_ON_DEVICE structured prompt on Return Eligibility scenario",
+      "scenario_index": 0,
+      "scenario_title": "Return Eligibility",
+      "inference_mode": "ONLY_ON_DEVICE",
+      "cloud_consent": false,
+      "model_option": "PREVIEW",
+      "source_text": "Customers may return unused items within 14 days of delivery with an original receipt. Returns require a prior Return Merchandise Authorization code from support.",
+      "expected_engine_gate": "ASK",
+      "expected_sdk_requirement": "inferenceSource=on_device; non-empty valid JSON; zero cloud inference"
+    },
+    {
+      "id": "nd_02_yes_human_attested_en",
+      "purpose": "(a) Valid confirmed YES requiring human source attestation & coverage review",
+      "scenario_index": 0,
+      "scenario_title": "Return Eligibility",
+      "inference_mode": "ONLY_ON_DEVICE",
+      "cloud_consent": false,
+      "source_text": "Customers may return unused items within 14 days of delivery when providing an original order receipt.",
+      "human_answers": {
+        "period": "YES",
+        "receipt": "YES",
+        "unused": "YES"
+      },
+      "attestations": {
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true
+      },
+      "expected_status": "YES",
+      "expected_label_contains": "CONDITIONAL · HUMAN-ATTESTED"
+    },
+    {
+      "id": "nd_03_no_prohibition_en",
+      "purpose": "(b) Clear prohibition blocking approval",
+      "scenario_index": 0,
+      "scenario_title": "Return Eligibility",
+      "source_text": "Clearance digital bundles are strictly final sale and no refunds are permitted under any circumstances.",
+      "human_answers": {
+        "period": "NO"
+      },
+      "expected_status": "NO",
+      "expected_label_contains": "NOT ELIGIBLE"
+    },
+    {
+      "id": "nd_04_conflict_en",
+      "purpose": "(c) Source contradiction / competing timeframe blocks positive approval",
+      "scenario_index": 0,
+      "scenario_title": "Return Eligibility",
+      "source_text": "All items qualify for a 30-day return window from delivery.\nHowever, store policy prohibits returns after 14 days and treats opened items as final sale.",
+      "human_answers": {
+        "period": "CONFLICT",
+        "receipt": "YES",
+        "unused": "YES"
+      },
+      "expected_status": "CONFLICT"
+    },
+    {
+      "id": "nd_05_ask_missing_en",
+      "purpose": "(d) Genuine missing prerequisite discovered in source remains ASK with grounded citation",
+      "scenario_index": 0,
+      "scenario_title": "Return Eligibility",
+      "inference_mode": "ONLY_ON_DEVICE",
+      "cloud_consent": false,
+      "source_text": "Unused items with a receipt returned within 14 days are eligible only if original manufacturer seals remain intact and buyer pays restocking fee.",
+      "human_answers": {
+        "period": "YES",
+        "receipt": "YES",
+        "unused": "YES"
+      },
+      "attestations": {
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": false
+      },
+      "expected_status": "ASK"
+    },
+    {
+      "id": "nd_06_unresolvable_dunno_ask_en",
+      "purpose": "(e) Intentionally unresolvable premise marked Don't know stays persistent ASK without nagging",
+      "scenario_index": 0,
+      "scenario_title": "Return Eligibility",
+      "source_text": "Returns require prior written supervisor exception approval stored in an offline archive.",
+      "human_answers": {
+        "period": "YES",
+        "receipt": "YES",
+        "unused": "YES"
+      },
+      "adaptive_action_on_discovered": "dunno",
+      "expected_status": "ASK",
+      "expected_confirmed_unknown": true
+    },
+    {
+      "id": "nd_07_tr_fa_optional",
+      "purpose": "(optional if quota >= 5 min left) Quick TR/FA multilingual on-device extraction sanity check",
+      "inference_mode": "ONLY_ON_DEVICE",
+      "cloud_consent": false,
+      "source_text_tr": "İade için orijinal fatura ibraz edilmelidir ve ürün ambalajı açılmamış olmalıdır.",
+      "source_text_fa": "بازگشت کالا تنها تا ۱۴ روز و با ارائه فاکتور اصلی مجاز است."
+    }
+  ]
+}

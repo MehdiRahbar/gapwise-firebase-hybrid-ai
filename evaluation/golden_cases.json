@@ -1,0 +1,260 @@
+{
+  "version": "1.0",
+  "description": "Shared cross-platform deterministic & source-audit parity cases for Web JS (Node) and Android Kotlin (JUnit).",
+  "cases": [
+    {
+      "id": "golden_01_empty_source_blocks_yes",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_02_unattested_coverage_blocks_yes",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": false,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "1. Return requests must be submitted within 14 days of delivery.\n2. Customers must provide an order receipt or proof of purchase.\n3. Returned items must be unused and in original condition.\n4. Final-sale merchandise is excluded.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_03_clean_restatement_human_attested_yes",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "1. Return requests must be submitted within 14 days of delivery.\n2. Customers must provide an order receipt or proof of purchase.\n3. Returned items must be unused and in original condition.\n4. Final-sale merchandise is excluded.",
+      "expected_status": "YES",
+      "expected_cert_tier": "CONDITIONAL_HUMAN_ATTESTED",
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_04_false_condition_no",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": false,
+      "coverage_reviewed": false,
+      "observations": {"period": "no"},
+      "source_text": "",
+      "expected_status": "NO",
+      "expected_cert_tier": null,
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_05_out_of_scope",
+      "policy_id": "refund",
+      "scope_accepted": false,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "Return requests must be submitted within 14 days of delivery.",
+      "expected_status": "OUT_OF_SCOPE",
+      "expected_cert_tier": null,
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_06_overlong_550_blocks_yes",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "This refund policy applies to ordinary requests received through our service team This refund policy applies to ordinary requests received through our service team This refund policy applies to ordinary requests received through our service team This refund policy applies to ordinary requests received through our service team This refund policy applies to ordinary requests received through our service team This refund policy applies to ordinary requests received through our service team This refund policy applies to ordinary requests received through our service team This refund policy applies to ordinary requests received through our service team Cash refunds require a verified original payment method",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_truncated": 1
+    },
+    {
+      "id": "golden_07_short_no_refunds_blocks_yes",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "Request is within 14 days of delivery.\nCustomer can provide order proof.\nItem is unused and in original condition.\nItem is not marked final sale.\nNo refunds.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 1
+    },
+    {
+      "id": "golden_08_short_no_return_void_blocks_yes",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "Request is within 14 days of delivery.\nCustomer can provide order proof.\nNo return.\nVoid.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 2
+    },
+    {
+      "id": "golden_09_line1_ban_and_polarity_collision",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "Policy: No refunds allowed\nItem is marked final sale.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 2
+    },
+    {
+      "id": "golden_10_competing_timeframes_conflict",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "Requests must arrive within 14 days of delivery.\nOnline claims must arrive within 7 days of delivery.",
+      "expected_status": "CONFLICT",
+      "expected_cert_tier": null,
+      "expected_min_novel": 1
+    },
+    {
+      "id": "golden_11_persian_and_turkish_unicode_bans",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "برای بازپرداخت، پلمب بهداشتی باید سالم باشد.\nİade için hijyen bandı açılmamış olmalıdır.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 2
+    },
+    {
+      "id": "golden_12_external_cross_reference_blocks_yes",
+      "policy_id": "refund",
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"period": "yes", "receipt": "yes", "unused": "yes", "clearance": "yes"},
+      "source_text": "All standard requirements apply unless waived under policy addendum.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 1
+    },
+    {
+      "id": "golden_13_tr_withdrawal_clean_yes",
+      "policy_id": "custom_tr_14d",
+      "policy": {
+        "id": "custom_tr_14d",
+        "title": "TR 14 Gun Cayma Kontrolu",
+        "scope": "Mesafeli Sozlesmeler",
+        "question": "14 gun icinde bildirim gecerli mi?",
+        "terms": [
+          {"id": "sure14", "label": "Tüketici on dört gün içinde gerekçe göstermeksizin cayma hakkını kullanmaktadır", "why": "Madde 9(1) süresi"},
+          {"id": "kalici", "label": "Cayma bildirimi süre dolmadan yazılı olarak veya kalıcı veri saklayıcısı ile yöneltilmektedir", "why": "Madde 11(1) bildirim şekli"}
+        ]
+      },
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"sure14": "yes", "kalici": "yes"},
+      "source_text": "Tüketici, on dört gün içinde herhangi bir gerekçe göstermeksizin ve cezai şart ödemeksizin sözleşmeden cayma hakkına sahiptir.\nCayma hakkının kullanıldığına dair bildirimin cayma hakkı süresi dolmadan, yazılı olarak veya kalıcı veri saklayıcısı ile satıcı veya sağlayıcıya yöneltilmesi yeterlidir.",
+      "expected_status": "YES",
+      "expected_cert_tier": "CONDITIONAL_HUMAN_ATTESTED",
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_14_tr_withdrawal_extra_seal_counterexample_ask",
+      "policy_id": "custom_tr_14d",
+      "policy": {
+        "id": "custom_tr_14d",
+        "title": "TR 14 Gun Cayma Kontrolu",
+        "scope": "Mesafeli Sozlesmeler",
+        "question": "14 gun icinde bildirim gecerli mi?",
+        "terms": [
+          {"id": "sure14", "label": "Tüketici on dört gün içinde gerekçe göstermeksizin cayma hakkını kullanmaktadır", "why": "Madde 9(1) süresi"},
+          {"id": "kalici", "label": "Cayma bildirimi süre dolmadan yazılı olarak veya kalıcı veri saklayıcısı ile yöneltilmektedir", "why": "Madde 11(1) bildirim şekli"}
+        ]
+      },
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"sure14": "yes", "kalici": "yes"},
+      "source_text": "Tüketici, on dört gün içinde herhangi bir gerekçe göstermeksizin sözleşmeden cayma hakkına sahiptir.\nAyrıca hijyen mührü açılmamış ve orijinal mağaza onayı alınmış olmalıdır.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 1
+    },
+    {
+      "id": "golden_15_tr_return_proper_use_clean_yes",
+      "policy_id": "custom_tr_madde13",
+      "policy": {
+        "id": "custom_tr_madde13",
+        "title": "TR Iade Kontrolu",
+        "scope": "Madde 13",
+        "question": "Iade suresi ve kullanim uygun mu?",
+        "terms": [
+          {"id": "on_gun", "label": "Tüketici cayma bildirimini yönelttiği tarihten itibaren on gün içinde malı geri göndermektedir", "why": "Madde 13(1)"},
+          {"id": "uygun_kullanim", "label": "Mal cayma süresi içinde işleyişine ve kullanım talimatlarına uygun kullanılmıştır", "why": "Madde 13(2)"}
+        ]
+      },
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"on_gun": "yes", "uygun_kullanim": "yes"},
+      "source_text": "Tüketici cayma hakkını kullandığına ilişkin bildirimi yönelttiği tarihten itibaren on gün içinde malı satıcı veya sağlayıcıya ya da yetkilendirmiş olduğu kişiye geri göndermek zorundadır.\nTüketici, cayma süresi içinde malı, işleyişine, teknik özelliklerine ve kullanım talimatlarına uygun bir şekilde kullandığı takdirde meydana gelen değişiklik ve bozulmalardan sorumlu değildir.",
+      "expected_status": "YES",
+      "expected_cert_tier": "CONDITIONAL_HUMAN_ATTESTED",
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_16_fa_password_compound_clean_yes",
+      "policy_id": "custom_fa_pw",
+      "policy": {
+        "id": "custom_fa_pw",
+        "title": "بررسی امنیت گذرواژه",
+        "scope": "شرایط استفاده",
+        "question": "آیا امنیت گذرواژه رعایت شده است؟",
+        "terms": [
+          {"id": "security", "label": "کاربر مسئول حفظ امنیت گذرواژه‌ خود است", "why": "تعهد نگهداری"},
+          {"id": "third_party", "label": "گذرواژه برای هیچ شخص ثالثی افشا نمی‌شود", "why": "ممنوعیت افشا"}
+        ]
+      },
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"security": "yes", "third_party": "yes"},
+      "source_text": "شما مسئول حفظ امنیت گذرواژه‌تان هستید و نباید آن را برای هیچ شخص ثالثی افشا کنید.",
+      "expected_status": "YES",
+      "expected_cert_tier": "CONDITIONAL_HUMAN_ATTESTED",
+      "expected_min_novel": 0
+    },
+    {
+      "id": "golden_17_fa_password_polarity_and_extra_counterexample_ask",
+      "policy_id": "custom_fa_pw",
+      "policy": {
+        "id": "custom_fa_pw",
+        "title": "بررسی امنیت گذرواژه",
+        "scope": "شرایط استفاده",
+        "question": "آیا امنیت گذرواژه رعایت شده است؟",
+        "terms": [
+          {"id": "security", "label": "کاربر مسئول حفظ امنیت گذرواژه‌ خود است", "why": "تعهد نگهداری"},
+          {"id": "third_party", "label": "گذرواژه برای هیچ شخص ثالثی افشا نمی‌شود", "why": "ممنوعیت افشا"}
+        ]
+      },
+      "scope_accepted": true,
+      "source_verified": true,
+      "coverage_reviewed": true,
+      "observations": {"security": "yes", "third_party": "yes"},
+      "source_text": "شما مسئول حفظ امنیت گذرواژه‌تان هستید و احراز هویت دوعاملی سخت‌افزاری الزامی است.",
+      "expected_status": "ASK",
+      "expected_cert_tier": null,
+      "expected_min_novel": 1
+    }
+  ]
+}

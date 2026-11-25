@@ -1,0 +1,1570 @@
+{
+  "metadata": {
+    "dataset_name": "gapwise_fresh_unseen_public_30_v1",
+    "created_utc": "2026-11-22T19:45:00Z",
+    "methodology": "30 verbatim excerpts extracted directly from newly fetched official public documents (EN:10, TR:10, FA:10; balanced 6 per class across YES/NO/ASK/CONFLICT/OUT_OF_SCOPE). Zero overlap with real_world_36 or balanced_200. Adjudication rubric is single-author frozen BEFORE executing GAPWISE once.",
+    "counts": {
+      "total": 30,
+      "en": 10,
+      "tr": 10,
+      "fa": 10,
+      "per_class": 6
+    }
+  },
+  "cases": [
+    {
+      "visible_input": {
+        "sample_id": "fp_en_01",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_key": "bsd2_en",
+        "source_title": "SPDX BSD-2-Clause License",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-2-Clause.txt",
+        "source_file_sha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "BSD-2-Clause (SPDX)",
+        "jurisdiction": "Global / Contract Law",
+        "question": "Can we redistribute both source and binary forms of this BSD-2-Clause library?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_01",
+          "title": "SPDX BSD-2-Clause License",
+          "scope": "BSD-2-Clause (SPDX)",
+          "terms": [
+            {
+              "id": "source_notice",
+              "label": "Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.",
+              "why": "Clause 1",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "binary_notice",
+              "label": "Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.",
+              "why": "Clause 2",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "source_notice": "yes",
+          "binary_notice": "yes"
+        },
+        "source_text": "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.",
+        "source_sha256": "7998dc5e1397b4f24542bca70e321f4de494c161617a33f5237741c7ca85984f"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "Both BSD-2-Clause redistribution obligations match confirmed checklist controls.",
+        "visible_facts": [
+          "source_notice (Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.) = yes",
+          "binary_notice (Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_02",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_key": "apache2_en",
+        "source_title": "Apache License 2.0 Section 4(a)-(b)",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/Apache-2.0.txt",
+        "source_file_sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+        "retrieval_utc": "2026-11-22T19:40:00Z",
+        "captured_utc": "2026-11-22T19:40:00Z",
+        "policy_effective_date": "Apache-2.0 (SPDX)",
+        "jurisdiction": "Global / Contract Law",
+        "question": "Can we distribute modified Apache-2.0 files if we ship a license copy and change notices?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_02",
+          "title": "Apache License 2.0 Section 4(a)-(b)",
+          "scope": "Apache-2.0 (SPDX)",
+          "terms": [
+            {
+              "id": "license_copy",
+              "label": "You must give any other recipients of the Work or Derivative Works a copy of this License",
+              "why": "Section 4(a)",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "modified_notice",
+              "label": "You must cause any modified files to carry prominent notices stating that You changed the files",
+              "why": "Section 4(b)",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "license_copy": "yes",
+          "modified_notice": "yes"
+        },
+        "source_text": "(a) You must give any other recipients of the Work or Derivative Works a copy of this License; and\n(b) You must cause any modified files to carry prominent notices stating that You changed the files; and",
+        "source_sha256": "b65ceffce72ac36f4f0d4b0172b0e8970d54efa4c905a26b4fc16324f29ca58f"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "Both excerpted Apache-2.0 Section 4(a)-(b) obligations match verified controls.",
+        "visible_facts": [
+          "license_copy (You must give any other recipients of the Work or Derivative Works a copy of this License) = yes",
+          "modified_notice (You must cause any modified files to carry prominent notices stating that You changed the files) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_03",
+        "split": "unseen_public_fresh",
+        "domain": "media_terms",
+        "lang": "en",
+        "source_key": "apple_media_en",
+        "source_title": "Apple Media Services Section C Account Age",
+        "source_url": "https://www.apple.com/legal/internet-services/itunes/us/terms.html",
+        "source_file_sha256": "b5c2b84067f1215f347801e96a3247534b102478e9ef1d7af9d58ed7272e09a2",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Apple Media Services Terms (US)",
+        "jurisdiction": "United States",
+        "question": "Can an 11-year-old create an Apple Account directly on their own under this clause?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_03",
+          "title": "Apple Media Services Section C Account Age",
+          "scope": "Apple Media Services Terms (US)",
+          "terms": [
+            {
+              "id": "age_13",
+              "label": "You must be age thirteen (13) (or equivalent minimum age in your Home Country) to create an account and use our Services.",
+              "why": "Section C",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "age_13": "no"
+        },
+        "source_text": "You must be age thirteen (13) (or equivalent minimum age in your Home Country, as set forth in the Apple Account creation process) to create an account and use our Services.",
+        "source_sha256": "a433b6be345e9cfbd481a921b978be48211f2fea071e190926dd0cb57ed59b41"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "User confirmed minimum age 13 criterion is NOT met.",
+        "visible_facts": [
+          "age_13 (You must be age thirteen (13) (or equivalent minimum age in your Home Country) to create an account and use our Services.) = no"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_04",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_key": "apache2_en",
+        "source_title": "Apache License 2.0 Section 3 Patent Termination",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/Apache-2.0.txt",
+        "source_file_sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+        "retrieval_utc": "2026-11-22T19:40:00Z",
+        "captured_utc": "2026-11-22T19:40:00Z",
+        "policy_effective_date": "Apache-2.0 (SPDX)",
+        "jurisdiction": "Global / Contract Law",
+        "question": "Do patent grants remain active if our company files a patent lawsuit over the Work?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_04",
+          "title": "Apache License 2.0 Section 3 Patent Termination",
+          "scope": "Apache-2.0 (SPDX)",
+          "terms": [
+            {
+              "id": "no_patent_suit",
+              "label": "Company has not instituted patent litigation alleging the Work constitutes patent infringement.",
+              "why": "Section 3 termination trigger",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_patent_suit": "no"
+        },
+        "source_text": "If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.",
+        "source_sha256": "fc95678501694c6213cd81087b7d15d1a68f56b4af9fd69c44d690860048474c"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "Confirmed patent litigation negates ongoing Apache-2.0 patent license grant.",
+        "visible_facts": [
+          "no_patent_suit (Company has not instituted patent litigation alleging the Work constitutes patent infringement.) = no"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_05",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_key": "isc_en",
+        "source_title": "SPDX ISC License",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/ISC.txt",
+        "source_file_sha256": "521c6f0ed8e64736684f89843d16a4df6b4b7449acbcfc6ca6630a3037ca8c53",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "ISC License (SPDX)",
+        "jurisdiction": "Global / Contract Law",
+        "question": "Is retaining only the copyright line sufficient to redistribute this ISC module?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_05",
+          "title": "SPDX ISC License",
+          "scope": "ISC License (SPDX)",
+          "terms": [
+            {
+              "id": "copyright_line",
+              "label": "Copyright notice appears in all copies",
+              "why": "First notice requirement",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "copyright_line": "yes"
+        },
+        "source_text": "Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.",
+        "source_sha256": "3d3776f107fcfe9be9d32b85bbb5db2d88320043b3bc52ba288bf55b20ea9233"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "permission notice"
+        ],
+        "rationale": "ISC requires both copyright notice and permission notice in all copies; checklist omits permission notice.",
+        "visible_facts": [
+          "copyright_line (Copyright notice appears in all copies) = yes"
+        ],
+        "missing_facts": [
+          "permission notice"
+        ],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_06",
+        "split": "unseen_public_fresh",
+        "domain": "media_terms",
+        "lang": "en",
+        "source_key": "apple_media_en",
+        "source_title": "Apple Media Services Section F Rentals",
+        "source_url": "https://www.apple.com/legal/internet-services/itunes/us/terms.html",
+        "source_file_sha256": "b5c2b84067f1215f347801e96a3247534b102478e9ef1d7af9d58ed7272e09a2",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Apple Media Services Terms (US)",
+        "jurisdiction": "United States",
+        "question": "Is keeping a rental on one device enough to comply with playback rules?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_06",
+          "title": "Apple Media Services Section F Rentals",
+          "scope": "Apple Media Services Terms (US)",
+          "terms": [
+            {
+              "id": "single_device",
+              "label": "Content rentals are viewable on a single device at a time",
+              "why": "Device limit",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "single_device": "yes"
+        },
+        "source_text": "Content rentals are viewable on a single device at a time, and must be played within thirty (30) days, and completed within forty-eight (48) hours of the start of play (stopping, pausing or restarting does not extend this period).",
+        "source_sha256": "2a29e35aebfbde5003968289f1af7567fa5ed165a1e5daffd7115fc5069b0f2c"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "30 days",
+          "48 hours"
+        ],
+        "rationale": "Clause additionally requires playing within 30 days and finishing within 48 hours of start.",
+        "visible_facts": [
+          "single_device (Content rentals are viewable on a single device at a time) = yes"
+        ],
+        "missing_facts": [
+          "30 days",
+          "48 hours"
+        ],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_07",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "en",
+        "source_key": "wikimedia_priv_en",
+        "source_title": "Wikimedia Privacy Policy IP Retention vs Abuse Investigation",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy",
+        "source_file_sha256": "37a5d9f72c8ec458d9906ae293804c724eb1152f94bd97edd89562e87b407038",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Effective Oct 6, 2025",
+        "jurisdiction": "Global / US",
+        "question": "Can our legal brief state IP addresses are guaranteed unlinked to usernames?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_07",
+          "title": "Wikimedia Privacy Policy IP Retention vs Abuse Investigation",
+          "scope": "Effective Oct 6, 2025",
+          "terms": [
+            {
+              "id": "no_name_needed",
+              "label": "No real name or email is required for a standard account",
+              "why": "Account registration",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "ip_username_unlinked",
+              "label": "IP addresses remain unassociated with usernames during abuse investigations",
+              "why": "IP linkability",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_name_needed": "yes",
+          "ip_username_unlinked": "conflict"
+        },
+        "source_text": "Your password is only used to verify that the account is yours. Your IP address is also automatically submitted to us, and we record it temporarily. This is to protect Wikimedia users and project content; in the event of abuse, IP addresses may be associated with usernames as part of an investigation.",
+        "source_sha256": "bbcddde53e366590e9e0529724341e99523cf292704d21d5e648ea47d02af572"
+      },
+      "ground_truth": {
+        "gt_decision": "CONFLICT",
+        "hidden_requirements": [],
+        "rationale": "Conflicting evidence/interpretation on whether IP addresses remain unlinked under abuse investigation.",
+        "visible_facts": [
+          "no_name_needed (No real name or email is required for a standard account) = yes",
+          "ip_username_unlinked (IP addresses remain unassociated with usernames during abuse investigations) = conflict"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_08",
+        "split": "unseen_public_fresh",
+        "domain": "media_terms",
+        "lang": "en",
+        "source_key": "apple_media_en",
+        "source_title": "Apple Media Services EULA Liability Cap Override",
+        "source_url": "https://www.apple.com/legal/internet-services/itunes/us/terms.html",
+        "source_file_sha256": "b5c2b84067f1215f347801e96a3247534b102478e9ef1d7af9d58ed7272e09a2",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Apple Media Services Terms",
+        "jurisdiction": "Consumer / Cross-Border",
+        "question": "Does the flat $250 liability cap strictly apply regardless of statutory consumer rights?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_08",
+          "title": "Apple Media Services EULA Liability Cap Override",
+          "scope": "Apple Media Services Terms",
+          "terms": [
+            {
+              "id": "statutory_vs_cap",
+              "label": "Contractual $250 liability cap governs without statutory consumer override",
+              "why": "Liability conflict",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "statutory_vs_cap": "conflict"
+        },
+        "source_text": "SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR PERSONAL INJURY, OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event shall Licensor’s total liability to you for all damages (other than as may be required by applicable law in cases involving personal injury) exceed the amount of two hundred and fifty dollars ($250.00).",
+        "source_sha256": "cf383a3ad3504539c29a21da18e616842743a2b09575691c53263a8a50c0e758"
+      },
+      "ground_truth": {
+        "gt_decision": "CONFLICT",
+        "hidden_requirements": [],
+        "rationale": "Mandatory local consumer statute conflicts with the contractual $250 total liability ceiling.",
+        "visible_facts": [
+          "statutory_vs_cap (Contractual $250 liability cap governs without statutory consumer override) = conflict"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_09",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_key": "ccby4_en",
+        "source_title": "Creative Commons BY 4.0 Section 2(a)(2) Fair Use",
+        "source_url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+        "source_file_sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "CC BY 4.0 International",
+        "jurisdiction": "Global",
+        "question": "Must a teacher quoting a short excerpt under statutory fair dealing follow CC BY 4.0 license terms?",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_09",
+          "title": "Creative Commons BY 4.0 Section 2(a)(2) Fair Use",
+          "scope": "CC BY 4.0 International",
+          "terms": [
+            {
+              "id": "fair_use_covered",
+              "label": "Use falls under CC BY 4.0 rather than statutory Exceptions and Limitations",
+              "why": "License scope",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "fair_use_covered": "yes"
+        },
+        "source_text": "Exceptions and Limitations . For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.",
+        "source_sha256": "f12484b6e09ee736430f1c1bfba764a329c379ed507b101d740047a1b84c83d6"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "Section 2(a)(2) explicitly puts statutory fair use/fair dealing outside the license scope.",
+        "visible_facts": [
+          "fair_use_covered (Use falls under CC BY 4.0 rather than statutory Exceptions and Limitations) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_en_10",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "en",
+        "source_key": "wikimedia_priv_en",
+        "source_title": "Wikimedia Privacy Policy Alternative Policies",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy",
+        "source_file_sha256": "37a5d9f72c8ec458d9906ae293804c724eb1152f94bd97edd89562e87b407038",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Effective Oct 6, 2025",
+        "jurisdiction": "Global",
+        "question": "Does the general Wikimedia Privacy Policy govern donor payment processing on donate.wikimedia.org?",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_en_10",
+          "title": "Wikimedia Privacy Policy Alternative Policies",
+          "scope": "Effective Oct 6, 2025",
+          "terms": [
+            {
+              "id": "covered_by_main",
+              "label": "Site falls under general Wikimedia Privacy Policy rather than Donor Privacy Policy",
+              "why": "Scope boundary",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "covered_by_main": "yes"
+        },
+        "source_text": "This Privacy Policy, however, does not cover some situations where we may gather or process information.\nSome Wikimedia Foundation websites or tools have alternative privacy policies or provisions that differ from this Privacy Policy. These websites include:\ndonate.wikimedia.org , including the donation process, such as clicking on a donation banner (covered by the Donor Privacy Policy );",
+        "source_sha256": "ef0ef87cbb962a63c5c3aa04eb024fc19dff4b567530e96e11df2eac05ec0234"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "Donations on donate.wikimedia.org are governed by the separate Donor Privacy Policy.",
+        "visible_facts": [
+          "covered_by_main (Site falls under general Wikimedia Privacy Policy rather than Donor Privacy Policy) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_01",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "tr",
+        "source_key": "wikimedia_priv_tr",
+        "source_title": "Wikimedia Gizlilik Politikası (Hesapsız Okuma)",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/tr",
+        "source_file_sha256": "9d2e67623e264f25a16f6cf583a613bfba0810c11b9540e2c159601a59dd02ff",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Effective Oct 6, 2025 (TR)",
+        "jurisdiction": "Global / TR",
+        "question": "Wikimedia sitelerini okumak için standart kullanıcı hesabı açmak zorunlu mu?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_01",
+          "title": "Wikimedia Gizlilik Politikası (Hesapsız Okuma)",
+          "scope": "Effective Oct 6, 2025 (TR)",
+          "terms": [
+            {
+              "id": "no_signup_needed",
+              "label": "Okuma ya da paylaşım yapmak için nadir durumlar haricinde üye olma zorunluluğu yoktur",
+              "why": "Üyelik muafiyeti",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "temp_account_public",
+              "label": "Üye olmadan yapılan katkılar geçici hesapla alenen gösterilir",
+              "why": "Geçici hesap şeffaflığı",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_signup_needed": "yes",
+          "temp_account_public": "yes"
+        },
+        "source_text": "Wikimedia sitelerinde okuma ya da paylaşım yapmak için nadir durumlar haricinde üye olmak zorunda değilsiniz. Ancak, eğer üye olmadan katkıda bulunursanız, yaptığınız paylaşımlar geçici hesabınız ile beraber alenen gösterilecek.",
+        "source_sha256": "1513fafa911a3c0fd75edb14f7fca63fdf9f63333b71db0d2c5d7dbb336a345d"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "Hem üyeliksiz okuma kuralı hem de geçici hesap kamusallığı onaylanmıştır.",
+        "visible_facts": [
+          "no_signup_needed (Okuma ya da paylaşım yapmak için nadir durumlar haricinde üye olma zorunluluğu yoktur) = yes",
+          "temp_account_public (Üye olmadan yapılan katkılar geçici hesapla alenen gösterilir) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_02",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "tr",
+        "source_key": "wikimedia_priv_tr",
+        "source_title": "Wikimedia Gizlilik Politikası Değişiklik Süreci",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/tr",
+        "source_file_sha256": "9d2e67623e264f25a16f6cf583a613bfba0810c11b9540e2c159601a59dd02ff",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Effective Oct 6, 2025 (TR)",
+        "jurisdiction": "Global / TR",
+        "question": "Önemli politika değişikliği öncesinde 30 günlük kamu görüşü şartı sağlandı mı?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_02",
+          "title": "Wikimedia Gizlilik Politikası Değişiklik Süreci",
+          "scope": "Effective Oct 6, 2025 (TR)",
+          "terms": [
+            {
+              "id": "public_comment_30",
+              "label": "En az 30 günlük bir kamu görüşü dönemi tamamlanmadan bu Politika'da önemli değişiklikler yapılmayacaktır.",
+              "why": "30 gün şartı",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "public_comment_30": "yes"
+        },
+        "source_text": "En az 30 günlük bir kamu görüşü dönemi tamamlanmadan bu Politika'da önemli değişiklikler yapılmayacaktır.",
+        "source_sha256": "daaea0cd09a288e2056101677080f9d3a40fae794393b7f87c40d44d15d86fbb"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "Politika değişikliği için gereken 30 günlük kamu görüşü süreci doğrulanmıştır.",
+        "visible_facts": [
+          "public_comment_30 (En az 30 günlük bir kamu görüşü dönemi tamamlanmadan bu Politika'da önemli değişiklikler yapılmayacaktır.) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_03",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "tr",
+        "source_key": "ccby4_tr",
+        "source_title": "CC BY 4.0 Türkçe Bölüm 2(a)(5)(B) Aşağı Yönlü Sınırlama Yasağı",
+        "source_url": "https://creativecommons.org/licenses/by/4.0/legalcode.tr",
+        "source_file_sha256": "3b423fb68c890b982ff19529498bfeffc26bfedb5ba9a4e5066d7716ac70420d",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "CC BY 4.0 TR",
+        "jurisdiction": "Global / TR",
+        "question": "CC BY 4.0 materyalini alıcıların erişimini kısıtlayan DRM ile dağıtabilir miyiz?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_03",
+          "title": "CC BY 4.0 Türkçe Bölüm 2(a)(5)(B) Aşağı Yönlü Sınırlama Yasağı",
+          "scope": "CC BY 4.0 TR",
+          "terms": [
+            {
+              "id": "no_etp",
+              "label": "Lisanslı Materyale Etkin Teknolojik Önlemler uygulanmamıştır ve ek şart dayatılmamıştır",
+              "why": "Kısıtlama yasağı",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_etp": "no"
+        },
+        "source_text": "Aşağı yönlü sınırlamanın olmayışı . Bunun herhangi bir Lisanslı Materyal alıcısının Lisansa Konu Hakları kullanımını sınırlaması hâlinde, Lisanslı Materyal üzerinde hiçbir ek veya farklı şart veya koşullar teklif edemez veya dayatamaz veya Lisanslı Materyale Etkin Teknolojik Önlemler uygulayamazsınız.",
+        "source_sha256": "0dee7c961f7990f03e432f215be486c327e1880647db9dde21ebfc3a2f318d34"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "DRM / etkin teknolojik önlem uygulanmaması şartı hayır olarak doğrulanmıştır.",
+        "visible_facts": [
+          "no_etp (Lisanslı Materyale Etkin Teknolojik Önlemler uygulanmamıştır ve ek şart dayatılmamıştır) = no"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_04",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "tr",
+        "source_key": "google_terms_tr",
+        "source_title": "Google Hizmet Şartları Otomatik Tarama Kısıtı",
+        "source_url": "https://policies.google.com/terms?hl=tr",
+        "source_file_sha256": "0e5964f62562a4a1b3356033a25d23a9ccd63983c2d2404452880d67785f2414",
+        "retrieval_utc": "2026-11-22T19:40:00Z",
+        "captured_utc": "2026-11-22T19:40:00Z",
+        "policy_effective_date": "Effective 30 July 2026 (TR)",
+        "jurisdiction": "Global / TR",
+        "question": "robots.txt dosyasını yok sayarak eğitim verisi çekmek bu şartlara uygun mu?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_04",
+          "title": "Google Hizmet Şartları Otomatik Tarama Kısıtı",
+          "scope": "Effective 30 July 2026 (TR)",
+          "terms": [
+            {
+              "id": "robots_compliance",
+              "label": "robots.txt gibi makine tarafından okunabilir talimatlara uyulmaktadır",
+              "why": "Otomatik erişim kuralı",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "robots_compliance": "no"
+        },
+        "source_text": "web sayfalarımızda makine tarafından okunabilir talimatları ihlal edecek şekilde, hizmetlerimizden herhangi birindeki içeriğe erişmek için otomatik yöntemler kullanma (ör. tarama, eğitim veya diğer etkinliklere izin vermeyen robots.txt dosyaları)",
+        "source_sha256": "19c68b871c6b422b05b942371884a31e90c81d5f19575f77d10b9e5212d8a955"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "robots.txt talimatlarına uyulmadığı doğrulanmıştır.",
+        "visible_facts": [
+          "robots_compliance (robots.txt gibi makine tarafından okunabilir talimatlara uyulmaktadır) = no"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_05",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "tr",
+        "source_key": "google_priv_tr",
+        "source_title": "Google Gizlilik Politikası Yeni Amaç İçin İzin",
+        "source_url": "https://policies.google.com/privacy?hl=tr",
+        "source_file_sha256": "95f6c62cff42c62abf73d30de90ccbf94067a2f2a462bd0c966ee924dbe821b5",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Effective 16 Oct 2026 (TR)",
+        "jurisdiction": "Global / TR",
+        "question": "Drive verilerinden reklam göstermemek yeni amaç için veriyi kullanmaya yeter mi?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_05",
+          "title": "Google Gizlilik Politikası Yeni Amaç İçin İzin",
+          "scope": "Effective 16 Oct 2026 (TR)",
+          "terms": [
+            {
+              "id": "no_drive_ads",
+              "label": "Drive, Gmail veya Google Fotoğraflar içeriklerine dayanarak kişiselleştirilmiş reklam gösterilmez",
+              "why": "Reklam kısıtı",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_drive_ads": "yes"
+        },
+        "source_text": "Kişiselleştirilmiş reklamları destekleyen diğer Google hizmetlerinde bu verilerin kullanılmasını tercih etmediğiniz sürece Drive, Gmail veya Google Fotoğraflar'daki içeriklerinize dayanarak size kişiselleştirilmiş reklamlar göstermeyiz.\nBilgilerinizi bu Gizlilik Politikası'nda yer almayan bir amaç doğrultusunda kullanmadan önce sizden izin isteriz.",
+        "source_sha256": "e34d98c5f762986a7d832be35eadcb2329fb2a97e5816226bbbe6e5819187fae"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "izin"
+        ],
+        "rationale": "Metin politika dışı her yeni amaç için açık kullanıcı izni zorunluluğu ekler; kontrol listesinde eksik.",
+        "visible_facts": [
+          "no_drive_ads (Drive, Gmail veya Google Fotoğraflar içeriklerine dayanarak kişiselleştirilmiş reklam gösterilmez) = yes"
+        ],
+        "missing_facts": [
+          "izin"
+        ],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_06",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "tr",
+        "source_key": "wikimedia_tou_tr",
+        "source_title": "Wikimedia Kullanım Şartları Bölüm 4 Reşit Olmayanlar",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/tr",
+        "source_file_sha256": "a4ec18900904ecef0bd039fa167f70fa2bee60d291921cea90ffea9a3dc3ab6e",
+        "retrieval_utc": "2026-11-22T19:40:00Z",
+        "captured_utc": "2026-11-22T19:40:00Z",
+        "policy_effective_date": "Wikimedia ToU TR",
+        "jurisdiction": "Global / TR",
+        "question": "Ticari amaçlı veri talebi yasağını doğrulamak bu maddeye uyum için yeterli mi?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_06",
+          "title": "Wikimedia Kullanım Şartları Bölüm 4 Reşit Olmayanlar",
+          "scope": "Wikimedia ToU TR",
+          "terms": [
+            {
+              "id": "no_promo_pii",
+              "label": "Onaylanmamış promosyon veya ticari amaçlarla kişisel bilgi istenmez",
+              "why": "Ticari gizlilik",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_promo_pii": "yes"
+        },
+        "source_text": "Taciz, kötüye kullanım, gizlilik ihlali ya da Wikimedia Vakfı tarafından özellikle onaylanmamış olan promosyon veya ticari amaçlarla kişisel olarak tanınmaya yol açacak bilgileri isteme ve\n18 yaşın altındaki birinden yasa dışı bir amaç için kişisel olarak tanınmaya yol açacak bilgiler isteme veya reşit olmayanların sağlık veya refahına ilişkin herhangi bir geçerli yasayı ihlal etme.",
+        "source_sha256": "b37e310e9388bbee6e2ee75195eabfc3064735d087fe51a4b98be604ab2f6fd1"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "18"
+        ],
+        "rationale": "18 yaş altı bireylerin sağlığı ve refahına ilişkin ek yasak kontrol listesinde yoktur.",
+        "visible_facts": [
+          "no_promo_pii (Onaylanmamış promosyon veya ticari amaçlarla kişisel bilgi istenmez) = yes"
+        ],
+        "missing_facts": [
+          "18"
+        ],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_07",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "tr",
+        "source_key": "wikimedia_tou_tr",
+        "source_title": "Wikimedia Kullanım Koşulları Dil Önceliği Çelişkisi",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/tr",
+        "source_file_sha256": "a4ec18900904ecef0bd039fa167f70fa2bee60d291921cea90ffea9a3dc3ab6e",
+        "retrieval_utc": "2026-11-22T19:40:00Z",
+        "captured_utc": "2026-11-22T19:40:00Z",
+        "policy_effective_date": "Wikimedia ToU TR",
+        "jurisdiction": "Global / TR",
+        "question": "Türkçe metindeki yorum İngilizce aslından farklıysa Türkçe metin esas alınabilir mi?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_07",
+          "title": "Wikimedia Kullanım Koşulları Dil Önceliği Çelişkisi",
+          "scope": "Wikimedia ToU TR",
+          "terms": [
+            {
+              "id": "tr_translation_binding",
+              "label": "Türkçe çeviri ile İngilizce asıl metin arasındaki anlam uyuşmazlığı çözüldü",
+              "why": "Dil önceliği",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "tr_translation_binding": "conflict"
+        },
+        "source_text": "İşbu içeriğin İngilizce asıl metni ile herhangi bir tercümesi arasında anlam veya yorumlama açısından çelişki bulunması durumunda İngilizce metin öncelik teşkil edecektir.",
+        "source_sha256": "836e778b023d93458f40a4a8c3f0433c36f0a024c65d66ddb5b0861c8ebedc24"
+      },
+      "ground_truth": {
+        "gt_decision": "CONFLICT",
+        "hidden_requirements": [],
+        "rationale": "İngilizce asıl metin ile Türkçe çeviri arasında yorum farkı/çelişki bildirildi.",
+        "visible_facts": [
+          "tr_translation_binding (Türkçe çeviri ile İngilizce asıl metin arasındaki anlam uyuşmazlığı çözüldü) = conflict"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_08",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "tr",
+        "source_key": "google_terms_tr",
+        "source_title": "Google Hizmet Şartları California vs Yerel Yasa Çakışması",
+        "source_url": "https://policies.google.com/terms?hl=tr",
+        "source_file_sha256": "0e5964f62562a4a1b3356033a25d23a9ccd63983c2d2404452880d67785f2414",
+        "retrieval_utc": "2026-11-22T19:40:00Z",
+        "captured_utc": "2026-11-22T19:40:00Z",
+        "policy_effective_date": "Effective 30 July 2026 (TR)",
+        "jurisdiction": "Cross-Border / TR",
+        "question": "Tüketici uyuşmazlığı yalnızca California mahkemelerinde mi görülmek zorundadır?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_08",
+          "title": "Google Hizmet Şartları California vs Yerel Yasa Çakışması",
+          "scope": "Effective 30 July 2026 (TR)",
+          "terms": [
+            {
+              "id": "governing_law",
+              "label": "Yetkili hukuk ve mahkeme uyuşmazlığı netleştirildi",
+              "why": "Yargı yetkisi",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "governing_law": "conflict"
+        },
+        "source_text": "Bu şartlar ile bu şartlardan, hizmete özgü ek şartlardan veya ilgili hizmetlerden kaynaklanan ya da bunlarla alakalı tüm anlaşmazlıklarda kanunlar ihtilafı kurallarından bağımsız olarak California yasaları geçerli olacaktır.\nGeçerli yerel yasalar uyarınca belirli uyuşmazlıklar Kaliforniya mahkemelerinde çözümlenemiyorsa, bu uyuşmazlıklar için yerel mahkemelerinize başvurabilirsiniz.",
+        "source_sha256": "f10f7e533c049029bb31dfaf5e2be633a69f5d3ad20c03828c7de0d3ea4b0cb6"
+      },
+      "ground_truth": {
+        "gt_decision": "CONFLICT",
+        "hidden_requirements": [],
+        "rationale": "California hukuku hükmü ile emredici yerel tüketici kanunu arasında yargı yetkisi çakışması vardır.",
+        "visible_facts": [
+          "governing_law (Yetkili hukuk ve mahkeme uyuşmazlığı netleştirildi) = conflict"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_09",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "tr",
+        "source_key": "ccby4_tr",
+        "source_title": "CC BY 4.0 Türkçe Bölüm 2(a)(2) İstisnalar ve Sınırlamalar",
+        "source_url": "https://creativecommons.org/licenses/by/4.0/legalcode.tr",
+        "source_file_sha256": "3b423fb68c890b982ff19529498bfeffc26bfedb5ba9a4e5066d7716ac70420d",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "CC BY 4.0 TR",
+        "jurisdiction": "Global / TR",
+        "question": "Adil kullanım istisnası kapsamındaki alıntılar CC BY 4.0 lisansı kapsamına girer mi?",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_09",
+          "title": "CC BY 4.0 Türkçe Bölüm 2(a)(2) İstisnalar ve Sınırlamalar",
+          "scope": "CC BY 4.0 TR",
+          "terms": [
+            {
+              "id": "under_cc_scope",
+              "label": "Kullanım yasal istisna yerine CC BY 4.0 kapsamındadır",
+              "why": "Lisans kapsamı",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "under_cc_scope": "yes"
+        },
+        "source_text": "İstisnalar ve Sınırlamalar. Herhangi bir şüpheye mahal vermemek adına, Sizin kullanımız ile ilgili herhangi bir İstisna ve Sınırlamanın geçerli olduğu durumlarda işbu Kamu Lisansı geçerli olmayacak olup, bu lisansın şart ve koşullarına riayet etmeniz gerekmemektedir.",
+        "source_sha256": "1c92e0611d0b8865f5aff869207e8bb20c9be22ba91791a8e7e784e6f75d9693"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "Yasal istisna ve sınırlamaların geçerli olduğu kullanımlar CC BY 4.0 kapsamı dışındadır.",
+        "visible_facts": [
+          "under_cc_scope (Kullanım yasal istisna yerine CC BY 4.0 kapsamındadır) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_tr_10",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "tr",
+        "source_key": "wikimedia_priv_tr",
+        "source_title": "Wikimedia Gizlilik Politikası Kapsam Dışı Siteler",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/tr",
+        "source_file_sha256": "9d2e67623e264f25a16f6cf583a613bfba0810c11b9540e2c159601a59dd02ff",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Effective Oct 6, 2025 (TR)",
+        "jurisdiction": "Global / TR",
+        "question": "Wikimedia Mağazası verileri bu genel gizlilik politikası kapsamında mıdır?",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_tr_10",
+          "title": "Wikimedia Gizlilik Politikası Kapsam Dışı Siteler",
+          "scope": "Effective Oct 6, 2025 (TR)",
+          "terms": [
+            {
+              "id": "main_policy_applies",
+              "label": "Hizmet genel Wikimedia Gizlilik Politikasına tabidir",
+              "why": "Politika kapsamı",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "main_policy_applies": "yes"
+        },
+        "source_text": "Bazı Wikimedia Vakfı web sitelerinin bu Gizlilik Politikasından farklı alternatif gizlilik politikaları veya hükümleri vardır. Bu web siteleri şunlardır:\nWikimedia Mağazası ( Mağazanın politikası kapsamındadır );\ndonate.wikimedia.org , bir bağış linkine tıklamak gibi bağış sürecini içerir ( Bağış Gizlilik Politikası kapsamındadır.);",
+        "source_sha256": "a586af99cb90b9ca61633fe21e46756990cb3cb11d0ad7e53960f4e65492ec5c"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "Wikimedia Mağazası ve bağış sayfası alternatif politikaların kapsamındadır.",
+        "visible_facts": [
+          "main_policy_applies (Hizmet genel Wikimedia Gizlilik Politikasına tabidir) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_01",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "fa",
+        "source_key": "google_priv_fa",
+        "source_title": "خط‌مشی رازداری Google (رمزگذاری و راستی‌آزمایی ۲ مرحله‌ای)",
+        "source_url": "https://policies.google.com/privacy?hl=fa",
+        "source_file_sha256": "3df111f8b32bf43ba6a9f8f1646c2409e66f6c9f5e31917f4cb0828fad7413f9",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Google Privacy Policy FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا الزامات انتقال امن داده و حفاظت حساب در این بخش تأیید شده است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_01",
+          "title": "خط‌مشی رازداری Google (رمزگذاری و راستی‌آزمایی ۲ مرحله‌ای)",
+          "scope": "Google Privacy Policy FA",
+          "terms": [
+            {
+              "id": "transit_encryption",
+              "label": "از رمزگذاری برای حفظ خصوصی داده‌ها هنگام انتقال استفاده می‌شود",
+              "why": "رمزگذاری انتقال",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "two_factor_features",
+              "label": "ویژگی‌های امنیتی مانند مرور ایمن و راستی‌آزمایی ۲ مرحله‌ای ارائه می‌شود",
+              "why": "حفاظت حساب",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "transit_encryption": "yes",
+          "two_factor_features": "yes"
+        },
+        "source_text": "از رمزگذاری استفاده می‌کنیم تا داده‌های شما هنگام انتقال به‌صورت خصوصی حفظ شوند\nمجموعه‌ای از ویژگی‌های امنیتی (مانند مرور ایمن ، بررسی امنیتی و راستی‌آزمایی ۲ مرحله‌ای ) را برای کمک به شما برای محافظت از حسابتان ارائه می‌کنیم",
+        "source_sha256": "56a0a0554776b82c8c50b0e71ad7eb5c65ccb048982a01a9ac8693f23dcf7656"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "هر دو کنترل امنیت انتقال و حفاظت حساب به صراحت تأیید شده‌اند.",
+        "visible_facts": [
+          "transit_encryption (از رمزگذاری برای حفظ خصوصی داده‌ها هنگام انتقال استفاده می‌شود) = yes",
+          "two_factor_features (ویژگی‌های امنیتی مانند مرور ایمن و راستی‌آزمایی ۲ مرحله‌ای ارائه می‌شود) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_02",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "fa",
+        "source_key": "wikimedia_priv_fa",
+        "source_title": "سیاست حفظ حریم خصوصی ویکی‌مدیا (ساخت حساب)",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/fa",
+        "source_file_sha256": "0cf90c146ce18d78bde12250ec905e23789172a37e4a677f8e263e169d874333",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Wikimedia Privacy FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا استفاده از وبگاه ویکی‌مدیا بدون نام واقعی و نشانی ایمیل مجاز است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_02",
+          "title": "سیاست حفظ حریم خصوصی ویکی‌مدیا (ساخت حساب)",
+          "scope": "Wikimedia Privacy FA",
+          "terms": [
+            {
+              "id": "no_account_required",
+              "label": "برای استفاده از وبگاه ویکی‌مدیا نیاز به ساخت حساب کاربری نیست",
+              "why": "عدم اجبار ثبت‌نام",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "no_realname_needed",
+              "label": "در صورت ایجاد حساب نیازی به ارائه نام یا آدرس ایمیل نیست",
+              "why": "حفظ ناشناسی",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_account_required": "yes",
+          "no_realname_needed": "yes"
+        },
+        "source_text": "شما برای استفاده از وبگاه ویکی‌مدیا نیاز به ساخت حساب کاربری ندارید.\nاگر شما یک حساب ایجاد می کنید، نیازی نیست که نام و یا آدرس ایمیلتان را به ما بدهید.",
+        "source_sha256": "4880bc4dfb6492e4f54ca07709718aebc1406d13a3622850551ffac6c2a8305f"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "هر دو بند عدم نیاز به حساب و عدم نیاز به نام و ایمیل تایید شده است.",
+        "visible_facts": [
+          "no_account_required (برای استفاده از وبگاه ویکی‌مدیا نیاز به ساخت حساب کاربری نیست) = yes",
+          "no_realname_needed (در صورت ایجاد حساب نیازی به ارائه نام یا آدرس ایمیل نیست) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_03",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "fa",
+        "source_key": "wikimedia_tou_fa",
+        "source_title": "شرایط استفاده ویکی‌مدیا (ممنوعیت جعل هویت)",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/fa",
+        "source_file_sha256": "a25356375b9040d9f73c4b2a4f4004d0da1cc04ebd0042262bf4808a8633576b",
+        "retrieval_utc": "2026-11-22T19:40:00Z",
+        "captured_utc": "2026-11-22T19:40:00Z",
+        "policy_effective_date": "Wikimedia ToU FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا استفاده از نام کاربری دیگران به قصد فریبکاری طبق شرایط استفاده مجاز است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_03",
+          "title": "شرایط استفاده ویکی‌مدیا (ممنوعیت جعل هویت)",
+          "scope": "Wikimedia ToU FA",
+          "terms": [
+            {
+              "id": "no_impersonation",
+              "label": "تلاش برای جعل هویت کاربر دیگر یا استفاده فریبکارانه از نام کاربری انجام نشده است",
+              "why": "منع جعل هویت",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_impersonation": "no"
+        },
+        "source_text": "تلاش برای جعل هویت کاربر یا فردی دیگر، وانمود کردن به وابستگی داشتن به شخص یا نهادی خاص، یا استفاده از نام کاربری کاربر دیگری به قصد فریبکاری؛",
+        "source_sha256": "69fdecb21e0d5a860f1ba2b7390e7636b2a0b88d19abe244c32d036d98eb1e1b"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "شرط منع جعل هویت و استفاده فریبکارانه نقض شده است (no).",
+        "visible_facts": [
+          "no_impersonation (تلاش برای جعل هویت کاربر دیگر یا استفاده فریبکارانه از نام کاربری انجام نشده است) = no"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_04",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "fa",
+        "source_key": "google_terms_fa",
+        "source_title": "شرایط خدمات Google (ممنوعیت فروش یا اجاره نرم‌افزار)",
+        "source_url": "https://policies.google.com/terms?hl=fa",
+        "source_file_sha256": "c3d7281e647a0291c3c1b757c85778a675606049cdef1bd8bfd122baf6fa19fc",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Google Terms FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا کپی، توزیع و کرایه‌دادن نرم‌افزار بدون مجوز تحت این شرط مجاز است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_04",
+          "title": "شرایط خدمات Google (ممنوعیت فروش یا اجاره نرم‌افزار)",
+          "scope": "Google Terms FA",
+          "terms": [
+            {
+              "id": "no_copy_or_rent",
+              "label": "هیچ بخشی از سرویس‌ها یا نرم‌افزار کپی، توزیع، فروخته یا کرایه داده نمی‌شود",
+              "why": "ممنوعیت بازفروش",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_copy_or_rent": "no"
+        },
+        "source_text": "اجازه ندارید هیچ بخشی از سرویس‌ها یا نرم‌افزار ما را کپی کنید، تغییر دهید، توزیع کنید، بفروشید یا کرایه دهید.",
+        "source_sha256": "10ea8c081eb2d6b61f5b7897a70b773742621cd24cd933607220a58dddce1763"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "شرط صریح منع کپی و اجاره نرم‌افزار نقض شده است.",
+        "visible_facts": [
+          "no_copy_or_rent (هیچ بخشی از سرویس‌ها یا نرم‌افزار کپی، توزیع، فروخته یا کرایه داده نمی‌شود) = no"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_05",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "fa",
+        "source_key": "ccby4_fa_deed",
+        "source_title": "سند CC BY 4.0 فارسی (اعتبار مناسب و اعلام تغییرات)",
+        "source_url": "https://creativecommons.org/licenses/by/4.0/deed.fa",
+        "source_file_sha256": "f2f68856919bdccb3761ac2519c54c67475ddf6db08e7db5e056d872a679d578",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "CC BY 4.0 Deed FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا صرفاً ذکر نام پدیدآورنده برای انتشار نسخه تغییریافته تحت CC BY 4.0 کافی است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_05",
+          "title": "سند CC BY 4.0 فارسی (اعتبار مناسب و اعلام تغییرات)",
+          "scope": "CC BY 4.0 Deed FA",
+          "terms": [
+            {
+              "id": "creator_credit",
+              "label": "نام پدیدآورنده و طرفین ارجاع درج شده است",
+              "why": "اعتبار پدیدآورنده",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "creator_credit": "yes"
+        },
+        "source_text": "اعتبار مناسب — اگر عرضه شود، شما باید نام پدیدآورنده و طرفین ارجاع، یک اعلان حق تکثیر، یک اعلان پروانه، یک اعلان سلب مسئولیت، و یک پیوند به مواد ارائه کنید.\nاگر تغییری صورت گرفته‌است به آن اشاره کنید — در نگارش 4.0، شما باید به اینکه مواد را تغییر دادید اشاره کنید و یک اشاره از تغییرات قبلی را حفظ کنید.",
+        "source_sha256": "f7f00be42be03c9006d2fe476e7e3ad0fdf1f67b3557cbcc9d31f081a13763c3"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "تغییری",
+          "اعلان پروانه"
+        ],
+        "rationale": "مستند علاوه بر نام پدیدآورنده، اعلان پروانه، پیوند و اشاره به تغییرات را الزامی می‌داند.",
+        "visible_facts": [
+          "creator_credit (نام پدیدآورنده و طرفین ارجاع درج شده است) = yes"
+        ],
+        "missing_facts": [
+          "تغییری",
+          "اعلان پروانه"
+        ],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_06",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "fa",
+        "source_key": "google_terms_fa",
+        "source_title": "شرایط خدمات Google (فرصت رفع مشکل و شرح دلیل)",
+        "source_url": "https://policies.google.com/terms?hl=fa",
+        "source_file_sha256": "c3d7281e647a0291c3c1b757c85778a675606049cdef1bd8bfd122baf6fa19fc",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Google Terms FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا ارسال پیش‌اعلان به تنهایی پیش از تعلیق یا برداشتن محتوا کافی است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_06",
+          "title": "شرایط خدمات Google (فرصت رفع مشکل و شرح دلیل)",
+          "scope": "Google Terms FA",
+          "terms": [
+            {
+              "id": "prior_notice",
+              "label": "پیش‌اعلان پیش از انجام اقدام ارائه می‌شود",
+              "why": "اطلاع‌رسانی قبلی",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "prior_notice": "yes"
+        },
+        "source_text": "پیش‌از انجام اقداماتی که در زیر شرح داده شده است، هر زمان که به‌طور منطقی امکان‌پذیر باشد پیش‌اعلانی به شما ارائه می‌کنیم، دلیل اقدام خود را شرح می‌دهیم، و فرصت رسیدگی و رفع مشکل را به شما می‌دهیم",
+        "source_sha256": "654fadc026c36cf71b799e391e6914603c706b8892c1910237bd826467dd3d49"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "فرصت رسیدگی",
+          "دلیل اقدام"
+        ],
+        "rationale": "متن علاوه بر پیش‌اعلان، شرح دلیل اقدام و دادن فرصت رسیدگی و رفع مشکل را نیز شرط کرده است.",
+        "visible_facts": [
+          "prior_notice (پیش‌اعلان پیش از انجام اقدام ارائه می‌شود) = yes"
+        ],
+        "missing_facts": [
+          "فرصت رسیدگی",
+          "دلیل اقدام"
+        ],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_07",
+        "split": "unseen_public_fresh",
+        "domain": "governance_policy",
+        "lang": "fa",
+        "source_key": "wikimedia_ucoc_fa",
+        "source_title": "آیین‌نامه فراگیر رفتاری ویکی‌مدیا (اولویت نسخه انگلیسی)",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Universal_Code_of_Conduct/fa",
+        "source_file_sha256": "f6b784d9a5ef0c4363be7681068627934f4f00a81c7f21ee0d29096df8ccfda5",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Wikimedia UCoC FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا در صورت تعارض معنایی بین ترجمه فارسی و متن انگلیسی می‌توان به ترجمه فارسی استناد کرد؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_07",
+          "title": "آیین‌نامه فراگیر رفتاری ویکی‌مدیا (اولویت نسخه انگلیسی)",
+          "scope": "Wikimedia UCoC FA",
+          "terms": [
+            {
+              "id": "translation_precedence",
+              "label": "تعارض تفسیری بین ترجمه فارسی و متن اصلی انگلیسی بررسی و حل شده است",
+              "why": "تعارض ترجمه",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "translation_precedence": "conflict"
+        },
+        "source_text": "لطفاً توجه داشته باشید که در صورت وجود هرگونه تفاوت در معنا یا تفسیر بین نسخه انگلیسی اصلی این محتوا و ترجمه، نسخه انگلیسی اصلی اولویت دارد.",
+        "source_sha256": "7dd662ac87cb889d2c9bbe12bb63baf4966b7b8501b1364a1be4d99c8239ae30"
+      },
+      "ground_truth": {
+        "gt_decision": "CONFLICT",
+        "hidden_requirements": [],
+        "rationale": "وجود تعارض در معنا بین نسخه ترجمه و نسخه انگلیسی اصلی نیازمند رجوع به متن انگلیسی است.",
+        "visible_facts": [
+          "translation_precedence (تعارض تفسیری بین ترجمه فارسی و متن اصلی انگلیسی بررسی و حل شده است) = conflict"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_08",
+        "split": "unseen_public_fresh",
+        "domain": "platform_terms",
+        "lang": "fa",
+        "source_key": "google_terms_fa",
+        "source_title": "شرایط خدمات Google (تعارض قانون کالیفرنیا و قانون محلی)",
+        "source_url": "https://policies.google.com/terms?hl=fa",
+        "source_file_sha256": "c3d7281e647a0291c3c1b757c85778a675606049cdef1bd8bfd122baf6fa19fc",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Google Terms FA",
+        "jurisdiction": "Cross-Border / FA",
+        "question": "آیا تمامی دعاوی الزاماً تحت قانون کالیفرنیا و در سانتاکلارا رسیدگی می‌شوند؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_08",
+          "title": "شرایط خدمات Google (تعارض قانون کالیفرنیا و قانون محلی)",
+          "scope": "Google Terms FA",
+          "terms": [
+            {
+              "id": "law_and_venue",
+              "label": "تعارض بین قانون کالیفرنیا و قوانین محلی آمره مشخص شده است",
+              "why": "تعارض قانون حاکم",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "law_and_venue": "conflict"
+        },
+        "source_text": "قوانین کالیفرنیا بر این شرایط و تمامی مناقشه‌های ناشی از یا مربوط به این شرایط، شرایط اضافی خاص سرویس ، یا هرگونه سرویس مرتبط صرف‌نظر از هرگونه اصول تعارض قوانین حاکم خواهد بود. این مناقشات منحصراً در دادگاه‌های فدرال یا ایالتی شهرستان سانتاکلارا، کالیفرنیا، ایالات متحده حل‌وفصل خواهند شد؛ و شما و Google به صلاحیت شخصی در این دادگاه‌ها رضایت می‌دهید.\nتا جایی‌که قانون قابل‌اجرای محلی مانع از حل‌وفصل بعضی اختلافات در دادگاه کالیفرنیا می‌شود، می‌توانید برای این اختلافات در دادگاه‌های محلی دادخواست دهید. همچنین، اگر قوانین قابل‌اجرای محلی مانع از اعمال قوانین کالیفرنیا برای حل‌وفصل این اختلافات می‌شود، تحت قوانین قابل‌اجرای محلی کشور، ایالت، یا محل سکونت شما به این اختلافات رسیدگی خواهد شد.",
+        "source_sha256": "9014409ffdf5c1ded8972b1fb76b430f546db4ba09277567c92073899b099b21"
+      },
+      "ground_truth": {
+        "gt_decision": "CONFLICT",
+        "hidden_requirements": [],
+        "rationale": "قانون قراردادی کالیفرنیا با قوانین محلی آمره در محل سکونت کاربر تعارض احتمالی دارد.",
+        "visible_facts": [
+          "law_and_venue (تعارض بین قانون کالیفرنیا و قوانین محلی آمره مشخص شده است) = conflict"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_09",
+        "split": "unseen_public_fresh",
+        "domain": "oss_licensing",
+        "lang": "fa",
+        "source_key": "ccby4_fa_deed",
+        "source_title": "سند CC BY 4.0 فارسی (خروج استفاده منصفانه از شمول پروانه)",
+        "source_url": "https://creativecommons.org/licenses/by/4.0/deed.fa",
+        "source_file_sha256": "f2f68856919bdccb3761ac2519c54c67475ddf6db08e7db5e056d872a679d578",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "CC BY 4.0 Deed FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا استناد به استفاده منصفانه در آموزش تابع شروط قراردادی CC BY 4.0 است؟",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_09",
+          "title": "سند CC BY 4.0 فارسی (خروج استفاده منصفانه از شمول پروانه)",
+          "scope": "CC BY 4.0 Deed FA",
+          "terms": [
+            {
+              "id": "within_license_scope",
+              "label": "استفاده در شمول پروانه CC BY 4.0 قرار می‌گیرد و خارج از استثنائات قانونی است",
+              "why": "شمول پروانه",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "within_license_scope": "yes"
+        },
+        "source_text": "استثنا یا محدودیت — حقوق کاربران در موارد\nاستثنا و محدودیت‌ها، چون استفاده منصفانه و خرید و فروش\nعادلانه، تحت تأثیر پروانه‌های کریتیو کامنز نیستند.",
+        "source_sha256": "0d206084ddcca500a5c2c800ae2ebc9da96dcb36ee094e1185d71ee87a878f39"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "موارد استفاده منصفانه و استثنائات قانونی خارج از شمول پروانه CC BY 4.0 هستند.",
+        "visible_facts": [
+          "within_license_scope (استفاده در شمول پروانه CC BY 4.0 قرار می‌گیرد و خارج از استثنائات قانونی است) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "fp_fa_10",
+        "split": "unseen_public_fresh",
+        "domain": "privacy_policy",
+        "lang": "fa",
+        "source_key": "wikimedia_priv_fa",
+        "source_title": "سیاست حفظ حریم خصوصی ویکی‌مدیا (موقعیت‌های خارج از شمول)",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/fa",
+        "source_file_sha256": "0cf90c146ce18d78bde12250ec905e23789172a37e4a677f8e263e169d874333",
+        "retrieval_utc": "2026-11-22T19:35:01Z",
+        "captured_utc": "2026-11-22T19:35:01Z",
+        "policy_effective_date": "Wikimedia Privacy FA",
+        "jurisdiction": "Global / FA",
+        "question": "آیا سیاست عمومی ویکی‌مدیا بر تراکنش‌های فروشگاه ویکی‌مدیا و صفحه اهدای مالی حاکم است؟",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "pf_fp_fa_10",
+          "title": "سیاست حفظ حریم خصوصی ویکی‌مدیا (موقعیت‌های خارج از شمول)",
+          "scope": "Wikimedia Privacy FA",
+          "terms": [
+            {
+              "id": "general_policy_scope",
+              "label": "این خدمت در شمول سیاست عمومی ویکی‌مدیا قرار دارد",
+              "why": "مرز شمول سیاست",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "general_policy_scope": "yes"
+        },
+        "source_text": "این سیاست حفظ اسرار بعضی موقعیت هایی که ما ممکن است اطلاعات را جمع آوری یا پردازش کنیم را تحت پوشش قرار نمی دهد.برای مثال, بعضی استفاده ها ممکن است تحت پوشش سیاست حفظ اسرار جداگانه ای باشد ( مانند آن هایی که در [$shopurl فروشگاه ویکی مدیا] باشند یا سایت یا سرویس هایی که توسط شخص ثالث اجرا می گردد, مانند پروژه های شخص ثالث توسعه دهنده در آزمایشگاه های ویکی مدیا). مثال هایی از چیز هایی را که این سیاست حفظ اسرار شامل نمی شود را در زیر پیدا کنید.",
+        "source_sha256": "eece847fc222aab39e83ab1786210f1d7bf65000ec2718923e41409a4e7395e0"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "بند صریحاً فروشگاه ویکی‌مدیا و خدمات دارای سیاست جداگانه را خارج از پوشش اعلام می‌کند.",
+        "visible_facts": [
+          "general_policy_scope (این خدمت در شمول سیاست عمومی ویکی‌مدیا قرار دارد) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "SINGLE_AUTHOR_FROZEN_PRIOR_TO_EVAL_2026_11_22"
+      }
+    }
+  ]
+}

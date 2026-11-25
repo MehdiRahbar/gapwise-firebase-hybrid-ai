@@ -1,0 +1,2 @@
+# Optional Python end-to-end browser automation; not needed by the web app
+playwright>=1.54,<2.0

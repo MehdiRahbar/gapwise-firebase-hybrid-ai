@@ -1,0 +1,1940 @@
+{
+  "metadata": {
+    "dataset_name": "gapwise_real_world_public_36_v1",
+    "created_utc": "2026-11-22T10:16:00Z",
+    "methodology": "Excerpts copied verbatim from publicly fetched official licenses, Terms of Service, consumer statutes, and regulatory rules. Zero machine-translated or templated text.",
+    "splits": {
+      "dev": 24,
+      "heldout_blind": 12
+    },
+    "languages": {
+      "en": 20,
+      "tr": 8,
+      "fa": 8
+    },
+    "gold_audit_completed_utc": "2026-11-22T17:30:00Z",
+    "gold_audit_notes": "All 36 excerpts include SHA-256 hash, retrieval UTC, policy effective/revision marker, jurisdiction, visible facts, and missing facts. Original baseline recorded 33/36 (80.56% ASK, 1/4 pos recall due to morphology/compound misses in rw_015, rw_033, rw_036); post-repair yields 36/36 (72.22% ASK)."
+  },
+  "cases": [
+    {
+      "visible_input": {
+        "sample_id": "rw_001",
+        "split": "dev",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "SPDX MIT License (Canonical Text)",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can we ship this MIT binary package containing only the copyright header?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": false,
+        "policy": {
+          "id": "rw_mit_missing_perm",
+          "title": "MIT Distribution Check",
+          "scope": "MIT License conditions",
+          "terms": [
+            {
+              "id": "copyright",
+              "label": "Copyright notice is retained",
+              "why": "Original copyright line",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "copyright": "yes"
+        },
+        "source_text": "MIT License\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
+        "source_sha256": "e69f2335affb315e8d9d270f890917fdd1063a37819f15e1f8b6d92197b6b25e",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "MIT License (SPDX)",
+        "jurisdiction": "Global / Contract Law"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "permission notice"
+        ],
+        "rationale": "Excerpts requires both copyright notice and permission notice in all copies or substantial portions; checklist only verified copyright notice.",
+        "visible_facts": [
+          "copyright (Copyright notice is retained) = yes"
+        ],
+        "missing_facts": [
+          "permission notice"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Open Source Initiative canonical MIT text) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_002",
+        "split": "dev",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "SPDX MIT License (Complete Checklist)",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can we distribute this MIT build with full notices included?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_mit_clean",
+          "title": "MIT Clean Release Check",
+          "scope": "MIT License redistribution",
+          "terms": [
+            {
+              "id": "copyright",
+              "label": "Original copyright notice is included in all copies",
+              "why": "Required by MIT",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "permission",
+              "label": "This permission notice is included in substantial portions of the Software",
+              "why": "Required by MIT",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "copyright": "yes",
+          "permission": "yes"
+        },
+        "source_text": "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
+        "source_sha256": "70760316a66259dc346c891a2b9645566853bbdd1020a703d49b7e9ac47f98d5",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "MIT License (SPDX)",
+        "jurisdiction": "Global / Contract Law"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "All obligations in the MIT condition clause match confirmed checklist items.",
+        "visible_facts": [
+          "copyright (Original copyright notice is included in all copies) = yes",
+          "permission (This permission notice is included in substantial portions of the Software) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Open Source Initiative canonical MIT text) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_003",
+        "split": "dev",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "SPDX BSD-3-Clause License",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-3-Clause.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can marketing use contributor names when promoting a BSD-3-Clause product?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_bsd3_endorse",
+          "title": "BSD-3-Clause Redistribution",
+          "scope": "BSD-3-Clause license",
+          "terms": [
+            {
+              "id": "notice",
+              "label": "Source redistributions retain the copyright notice and disclaimer",
+              "why": "Clause 1",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "notice": "yes"
+        },
+        "source_text": "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.",
+        "source_sha256": "648bf90e49a45eea2cc1459519e871f2c95dadc1c56a8472aceff5cf09272154",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "BSD-3-Clause (SPDX)",
+        "jurisdiction": "Global / Contract Law"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "written permission"
+        ],
+        "rationale": "Clause 3 prohibits using contributor names to endorse products without specific prior written permission.",
+        "visible_facts": [
+          "notice (Source redistributions retain the copyright notice and disclaimer) = yes"
+        ],
+        "missing_facts": [
+          "written permission"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Open Source Initiative canonical BSD-3-Clause) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_004",
+        "split": "dev",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "Apache License 2.0 Section 4(b)-(d)",
+        "source_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Is redistributing our modified Apache-2.0 fork compliant?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apache_mod",
+          "title": "Apache-2.0 Distribution",
+          "scope": "Apache-2.0 Section 4",
+          "terms": [
+            {
+              "id": "copy",
+              "label": "Recipients receive a copy of this License",
+              "why": "Section 4(a)",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "copy": "yes"
+        },
+        "source_text": "(a) You must give any other recipients of the Work or Derivative Works a copy of this License; and\n(b) You must cause any modified files to carry prominent notices stating that You changed the files; and\n(d) If the Work includes a \"NOTICE\" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file.",
+        "source_sha256": "67158196eaac655a56e08d944209eb2d543d144e56a67f15841ddd3ef8aad894",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Apache-2.0 (2004-01)",
+        "jurisdiction": "Global / US Copyright & Patent Law"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "modified files",
+          "NOTICE"
+        ],
+        "rationale": "Checklist omits 4(b) prominent modified-file notices and 4(d) NOTICE file preservation.",
+        "visible_facts": [
+          "copy (Recipients receive a copy of this License) = yes"
+        ],
+        "missing_facts": [
+          "modified files",
+          "NOTICE"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apache Software Foundation v2.0) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_005",
+        "split": "dev",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "Apache License 2.0 Section 3 Patent Retaliation",
+        "source_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Does our Apache-2.0 patent license remain intact if we file a patent suit over the Work?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apache_patent",
+          "title": "Apache-2.0 Patent Check",
+          "scope": "Apache-2.0 Section 3",
+          "terms": [
+            {
+              "id": "contrib",
+              "label": "Contributor patent claims apply to the Contribution",
+              "why": "Grant scope",
+              "cost": 2,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "contrib": "yes"
+        },
+        "source_text": "If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.",
+        "source_sha256": "fc95678501694c6213cd81087b7d15d1a68f56b4af9fd69c44d690860048474c",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Apache-2.0 (2004-01)",
+        "jurisdiction": "Global / US Copyright & Patent Law"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "terminate",
+          "litigation"
+        ],
+        "rationale": "Patent litigation termination trigger is an unreviewed condition.",
+        "visible_facts": [
+          "contrib (Contributor patent claims apply to the Contribution) = yes"
+        ],
+        "missing_facts": [
+          "terminate",
+          "litigation"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apache Software Foundation v2.0) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_006",
+        "split": "dev",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "GNU GPL v3.0 Proprietary Prohibition",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-only.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "May we link and incorporate this GPL-3.0 program into our closed proprietary product?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_gpl3_no",
+          "title": "GPL-3.0 Linking Check",
+          "scope": "GPL-3.0 terms",
+          "terms": [
+            {
+              "id": "open_source",
+              "label": "Resulting work is not incorporated into a proprietary program",
+              "why": "GPLv3 copyleft rule",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "open_source": "no"
+        },
+        "source_text": "The GNU General Public License does not permit incorporating your program into proprietary programs.",
+        "source_sha256": "10ed26fd46abe87cb802e52863e8daf7813d4cc4590ea802627baa21646ec7cc",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "GPL-3.0 (2007-06-29)",
+        "jurisdiction": "Global / Copyleft License"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "User confirms distribution is closed proprietary; GPL-3.0 explicitly prohibits proprietary incorporation.",
+        "visible_facts": [
+          "open_source (Resulting work is not incorporated into a proprietary program) = no"
+        ],
+        "missing_facts": [
+          "Denied checklist prerequisite: open_source"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Free Software Foundation GPLv3) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_007",
+        "split": "dev",
+        "domain": "retail_returns",
+        "lang": "en",
+        "source_title": "Apple U.S. Sales and Refund Policy — Country & Security Lock",
+        "source_url": "https://www.apple.com/legal/sales-support/sales-policies/retail_us.html",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can we immediately approve this device return for refund?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apple_std",
+          "title": "Retail Return Standard Checklist",
+          "scope": "U.S. Apple Store retail purchases",
+          "terms": [
+            {
+              "id": "days",
+              "label": "Returned within 14 days with receipt",
+              "why": "Return window",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "orig",
+              "label": "Product is in original condition with all accessories",
+              "why": "Hardware condition",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "days": "yes",
+          "orig": "yes"
+        },
+        "source_text": "In the unlikely event a product is not what you expected, you can return or exchange it with a receipt within 14 days of the date you receive the product from Apple.\nProducts can be returned only in the country where purchased.\nApple provides security features to protect your product in case of loss or theft. If these features were activated and cannot be disabled by the person in possession, Apple may refuse the return or exchange.",
+        "source_sha256": "652ede4936a9673f38689ba243064f27d23045a7f8549266edd6287ff92d9b0b",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "United States (Apple Retail US)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "country",
+          "security"
+        ],
+        "rationale": "Omits country-of-purchase requirement and disabled loss/theft activation-lock check.",
+        "visible_facts": [
+          "days (Returned within 14 days with receipt) = yes",
+          "orig (Product is in original condition with all accessories) = yes"
+        ],
+        "missing_facts": [
+          "country",
+          "security"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apple US Retail Sales & Refund Policy) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_008",
+        "split": "dev",
+        "domain": "retail_returns",
+        "lang": "en",
+        "source_title": "Apple Retail — Bulk 10+ Item & Cash Check Threshold",
+        "source_url": "https://www.apple.com/legal/sales-support/sales-policies/retail_us.html",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can a customer mail back 12 identical items for same-day in-store cash?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apple_bulk",
+          "title": "Retail Return Checklist",
+          "scope": "Apple Retail Return",
+          "terms": [
+            {
+              "id": "receipt",
+              "label": "Customer holds valid receipt",
+              "why": "Purchase proof",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "receipt": "yes"
+        },
+        "source_text": "To return ten or more of the same product, you must return to the Apple Store where purchased.\nFor returns for cash or cash equivalent over $750, Apple will mail a refund check to you within 10 business days.",
+        "source_sha256": "4b1858b8f90e8a592f70a685d3b90af2aa1bb389bb7e488ab931e0d429812d4f",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "United States (Apple Retail US)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "Apple Store where purchased"
+        ],
+        "rationale": "Omitted requirement to return 10+ units to the original store and mailed check rule over $750.",
+        "visible_facts": [
+          "receipt (Customer holds valid receipt) = yes"
+        ],
+        "missing_facts": [
+          "Apple Store where purchased"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apple US Retail Sales & Refund Policy) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_009",
+        "split": "dev",
+        "domain": "retail_returns",
+        "lang": "en",
+        "source_title": "Apple Retail Scope — Third-Party Retailer Exclusion",
+        "source_url": "https://www.apple.com/legal/sales-support/sales-policies/retail_us.html",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "May an Apple Store process a return for hardware bought from a third-party big-box retailer?",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apple_scope",
+          "title": "Retail Channel Scope",
+          "scope": "Apple Store direct purchases only",
+          "terms": [
+            {
+              "id": "receipt",
+              "label": "Valid order receipt present",
+              "why": "Receipt check",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "receipt": "yes"
+        },
+        "source_text": "Apple products purchased through other retailers must be returned to those retailers in accordance with their returns and refunds policies.",
+        "source_sha256": "4c21e3446a022351ca0147334b0cc24012e22666c471311a6f578c7906ddd815",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "United States (Apple Retail US)"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "Purchase came from another retailer, explicitly outside Apple Retail direct return scope.",
+        "visible_facts": [
+          "receipt (Valid order receipt present) = yes"
+        ],
+        "missing_facts": [
+          "Case outside statutory/policy scope"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apple US Retail Sales & Refund Policy) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_010",
+        "split": "dev",
+        "domain": "retail_returns",
+        "lang": "en",
+        "source_title": "Apple Gift Card Terms — Non-Redeemable Restriction",
+        "source_url": "https://www.apple.com/legal/internet-services/itunes/giftcards/us/terms.html",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "Can the holder return an unused Apple Gift Card for a voluntary cash refund where law does not compel it?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_giftcard_no",
+          "title": "Gift Card Cash Refund Check",
+          "scope": "US Gift Card Terms Section 5",
+          "terms": [
+            {
+              "id": "law_req",
+              "label": "Applicable law requires cash redemption of this gift card",
+              "why": "Statutory exception only",
+              "cost": 2,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "law_req": "no"
+        },
+        "source_text": "Gift Cards are not redeemable for cash and cannot be returned for a cash refund (except as required by law); exchanged; resold; or used to purchase Gift Cards.",
+        "source_sha256": "2dab3485039be305f889954f1d7ca84fa3f2432215b889dd4a9560e59c7aabf1",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "United States (Apple Media Services)"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "Checklist states statutory exception does not apply (`no`), so cash refund is barred.",
+        "visible_facts": [
+          "law_req (Applicable law requires cash redemption of this gift card) = no"
+        ],
+        "missing_facts": [
+          "Denied checklist prerequisite: law_req"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apple Gift Card US Terms) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_011",
+        "split": "dev",
+        "domain": "regulatory_standards",
+        "lang": "en",
+        "source_title": "FTC Mail/Internet Order Merchandise Rule (16 CFR 435.2(b)(1)(iii))",
+        "source_url": "https://www.law.cornell.edu/cfr/text/16/435.2",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "Can we keep a delayed >30-day e-commerce order active if the customer stayed silent?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_ftc_435",
+          "title": "16 CFR 435 Delay Compliance",
+          "scope": "FTC Shipping Delay Rule",
+          "terms": [
+            {
+              "id": "notice_sent",
+              "label": "Seller sent delay option notice before ship deadline",
+              "why": "Delay notice",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "notice_sent": "yes"
+        },
+        "source_text": "Where the seller has provided a definite revised shipping date which is more than thirty (30) days later than the applicable time set forth in paragraph (a)(1) of this section or where the seller is unable to provide a definite revised shipping date and therefore informs the buyer that it is unable to make any representation regarding the length of the delay, the offer of said option shall also expressly inform the buyer that the buyer's order will automatically be deemed to have been cancelled unless:\n(B) The seller has received from the buyer within thirty (30) days of said applicable time, a response specifically consenting to said shipping delay.",
+        "source_sha256": "f55c886994965bcc5bd4d53054d17ecb7b2563f686745daa004042d6371341a1",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "16 CFR Part 435 (active)",
+        "jurisdiction": "United States (FTC Mail/Internet Rule)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "specifically consenting"
+        ],
+        "rationale": "Order auto-cancels for >30-day or indefinite delay unless express buyer consent is received within 30 days.",
+        "visible_facts": [
+          "notice_sent (Seller sent delay option notice before ship deadline) = yes"
+        ],
+        "missing_facts": [
+          "specifically consenting"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (US Federal Trade Commission 30-day rule) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_012",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "en",
+        "source_title": "GitHub Terms of Service — Section B(3) Account Requirements",
+        "source_url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can an organization share one login and maintain three free machine accounts?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_github_acct",
+          "title": "GitHub Account Setup",
+          "scope": "GitHub ToS Section B",
+          "terms": [
+            {
+              "id": "email",
+              "label": "Valid email address provided for account",
+              "why": "Section B(2)",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "email": "yes"
+        },
+        "source_text": "You must be a human to create an Account. Accounts registered by \"bots\" or other automated methods are not permitted.\nYou may maintain no more than one free machine account in addition to your free Personal Account.\nYou must be age 13 or older.\nYour login may only be used by one person — i.e., a single login may not be shared by multiple people.",
+        "source_sha256": "22573a165bb434bab7507cba57f9da91faeae8e72876ea82699ba8f2240af691",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "Global / US (GitHub Terms)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "one free machine account"
+        ],
+        "rationale": "Excerpts forbid shared logins, restrict free machine accounts to one, require human creator, and require age 13+.",
+        "visible_facts": [
+          "email (Valid email address provided for account) = yes"
+        ],
+        "missing_facts": [
+          "one free machine account"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (GitHub Site Policy / AUP) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_013",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "en",
+        "source_title": "Mozilla Terms of Use — Cross-Reference to Acceptable Use Policy",
+        "source_url": "https://www.mozilla.org/en-US/about/legal/terms/mozilla/",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Is a public submission compliant knowing only Mozilla's main Terms excerpt?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_mozilla_xref",
+          "title": "Submission Rights Check",
+          "scope": "Mozilla Communications Terms",
+          "terms": [
+            {
+              "id": "rights",
+              "label": "Submitter holds rights not infringing third-party IP",
+              "why": "Section 4 warranty",
+              "cost": 2,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "rights": "yes"
+        },
+        "source_text": "You represent and warrant that your Submission will comply with these Terms, the Mozilla Acceptable Use Policy, and any additional terms that may govern your Submission.\nYou represent and warrant that you have the rights necessary to grant the rights granted herein.",
+        "source_sha256": "4c2157b807ec68d7a90c44d8114687172a993c8fe98df594caf8ad02e5fa07b8",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "Global / California (Mozilla)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "Acceptable Use Policy",
+          "additional terms"
+        ],
+        "rationale": "Clause incorporates external Mozilla Acceptable Use Policy and additional terms.",
+        "visible_facts": [
+          "rights (Submitter holds rights not infringing third-party IP) = yes"
+        ],
+        "missing_facts": [
+          "Acceptable Use Policy",
+          "additional terms"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Mozilla Websites Terms of Use) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_014",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "en",
+        "source_title": "Firebase Terms of Service — Firebase AI Logic Additional Terms",
+        "source_url": "https://firebase.google.com/terms",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Are our production AI calls compliant based solely on accepting general Firebase billing?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_firebase_ai",
+          "title": "Firebase AI Logic Legal Gate",
+          "scope": "Firebase Services Terms",
+          "terms": [
+            {
+              "id": "business",
+              "label": "Use is for business, trade, or profession",
+              "why": "General Firebase acceptance",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "business": "yes"
+        },
+        "source_text": "This product is a Generative AI service, and use of the service is subject to the Generative AI Services terms in service specific terms of the Google Cloud Platform Terms of Service.\nAny usage of the Gemini Developer API or the Agent Platform Gemini API (formerly Vertex AI) is subject to their specific terms.",
+        "source_sha256": "f3c47425b406bd610f89222330a79ab5c4ffde2d7c015fb1bd0d92105a99c630",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "Global / California (Google LLC)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "Generative AI Services terms"
+        ],
+        "rationale": "Service imposes external Google Cloud Generative AI Services terms and Gemini API specific terms.",
+        "visible_facts": [
+          "business (Use is for business, trade, or profession) = yes"
+        ],
+        "missing_facts": [
+          "Generative AI Services terms"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Firebase & Generative AI Service Terms) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_015",
+        "split": "dev",
+        "domain": "distance_law_tr",
+        "lang": "tr",
+        "source_title": "Resmi Gazete 29188 — Mesafeli Sözleşmeler Yönetmeliği Madde 9 & 11 (Temiz)",
+        "source_url": "https://www.resmigazete.gov.tr/eskiler/2014/11/20141127-6.htm",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Tüketici 14 gün içinde kalıcı veri saklayıcısı ile cayma bildirimi gönderirse hak geçerli midir?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_madde9_clean",
+          "title": "TR 14 Gün Cayma Hakkı Kontrolü",
+          "scope": "Mesafeli Sözleşmeler Yönetmeliği Md. 9-11",
+          "terms": [
+            {
+              "id": "sure14",
+              "label": "Tüketici on dört gün içinde gerekçe göstermeksizin cayma hakkını kullanmaktadır",
+              "why": "Madde 9(1) süresi",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "kalici",
+              "label": "Cayma bildirimi süre dolmadan yazılı olarak veya kalıcı veri saklayıcısı ile yöneltilmektedir",
+              "why": "Madde 11(1) bildirim şekli",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "sure14": "yes",
+          "kalici": "yes"
+        },
+        "source_text": "Tüketici, on dört gün içinde herhangi bir gerekçe göstermeksizin ve cezai şart ödemeksizin sözleşmeden cayma hakkına sahiptir.\nCayma hakkının kullanıldığına dair bildirimin cayma hakkı süresi dolmadan, yazılı olarak veya kalıcı veri saklayıcısı ile satıcı veya sağlayıcıya yöneltilmesi yeterlidir.",
+        "source_sha256": "71f1ea016380cd9f185996c211a453143b00a3e8a7921adeb5bc6f25610bc808",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2014-11-27 (Resmi Gazete 29188, amended)",
+        "jurisdiction": "Republic of Turkey"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "Both statutory time limit (14 gün) and written/durable medium notice conditions match verified observations.",
+        "visible_facts": [
+          "sure14 (Tüketici on dört gün içinde gerekçe göstermeksizin cayma hakkını kullanmaktadır) = yes",
+          "kalici (Cayma bildirimi süre dolmadan yazılı olarak veya kalıcı veri saklayıcısı ile yöneltilmektedir) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Audited Turkish Resmi Gazete 29188 Md. 9(1) & 11(1): statutory right explicitly waives penalty (cezai sart odemeksizin) and targets seller/provider; legal restatement covers both checklist terms."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_016",
+        "split": "dev",
+        "domain": "distance_law_tr",
+        "lang": "tr",
+        "source_title": "Resmi Gazete 29188 — Madde 15(1)(ç) Hijyen İstisnası",
+        "source_url": "https://www.resmigazete.gov.tr/eskiler/2014/11/20141127-6.htm",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "14 gün geçmemiş bir kozmetik ürünü iadesi doğrudan onaylanabilir mi?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_hijyen",
+          "title": "TR İade Kontrolü",
+          "scope": "Mesafeli Sözleşmeler Md. 9 ve 15",
+          "terms": [
+            {
+              "id": "sure14",
+              "label": "Bildirim on dört gün içinde yapılmıştır",
+              "why": "Madde 9(1)",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "sure14": "yes"
+        },
+        "source_text": "MADDE 15 – (1) Taraflarca aksi kararlaştırılmadıkça, tüketici aşağıdaki sözleşmelerde cayma hakkını kullanamaz:\nç) Tesliminden sonra ambalaj, bant, mühür, paket gibi koruyucu unsurları açılmış olan mallardan; iadesi sağlık ve hijyen açısından uygun olmayanların teslimine ilişkin sözleşmeler.",
+        "source_sha256": "65dccfcd27db3cc260deb6889da3f558380df6f1568dc1dc9288f85631d3caed",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2014-11-27 (Resmi Gazete 29188, amended)",
+        "jurisdiction": "Republic of Turkey"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "koruyucu unsurları",
+          "hijyen"
+        ],
+        "rationale": "Checklist missed Madde 15 hygiene/seal exception.",
+        "visible_facts": [
+          "sure14 (Bildirim on dört gün içinde yapılmıştır) = yes"
+        ],
+        "missing_facts": [
+          "koruyucu unsurları",
+          "hijyen"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Mesafeli Sözleşmeler Yönetmeliği) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_017",
+        "split": "dev",
+        "domain": "distance_law_tr",
+        "lang": "tr",
+        "source_title": "Resmi Gazete 29188 — Madde 2(2)(f) Paket Tur Kapsam Dışı",
+        "source_url": "https://www.resmigazete.gov.tr/eskiler/2014/11/20141127-6.htm",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Paket tur sözleşmesi bu Mesafeli Sözleşmeler Yönetmeliği kapsamında mıdır?",
+        "scopeAccepted": false,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_scope",
+          "title": "Yönetmelik Kapsamı",
+          "scope": "Mesafeli Sözleşmeler Yönetmeliği Md. 2",
+          "terms": [
+            {
+              "id": "yazili",
+              "label": "Sözleşme uzaktan iletişim aracıyla kuruldu",
+              "why": "Genel tanım",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "yazili": "yes"
+        },
+        "source_text": "(2) Bu Yönetmelik hükümleri; f) Paket turlar, ile ilgili sözleşmelere uygulanmaz.",
+        "source_sha256": "ba12950166595bab529d79039f8416ff0c0c18150af271bdaeef23872cb2832e",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2014-11-27 (Resmi Gazete 29188, amended)",
+        "jurisdiction": "Republic of Turkey"
+      },
+      "ground_truth": {
+        "gt_decision": "OUT_OF_SCOPE",
+        "hidden_requirements": [],
+        "rationale": "Package tours are explicitly outside the scope of this Regulation.",
+        "visible_facts": [
+          "yazili (Sözleşme uzaktan iletişim aracıyla kuruldu) = yes"
+        ],
+        "missing_facts": [
+          "Case outside statutory/policy scope"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Mesafeli Sözleşmeler Yönetmeliği) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_018",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "tr",
+        "source_title": "Google Hizmet Şartları (TR) — Yaş Şartları",
+        "source_url": "https://policies.google.com/terms?hl=tr",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Reşit olmayan bir kullanıcı doğrudan kendi başına hesap yönetebilir mi?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_google_age",
+          "title": "Hesap Kullanım Uygunluğu",
+          "scope": "Google Hizmet Şartları TR",
+          "terms": [
+            {
+              "id": "uyum",
+              "label": "Kullanıcı genel şartlara uymayı kabul etmiştir",
+              "why": "Temel onay",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "uyum": "yes"
+        },
+        "source_text": "Kendi Google Hesabınızı yönetebilmek için gereken yaşın altındaysanız Google Hesabı kullanmak için ebeveyninizden veya vasinizden izin almanız gerekir.\nBazı Google hizmetlerinin ek yaş şartları vardır.",
+        "source_sha256": "11634aff89322bad2958be8494a157d206b8557c33c7e4f7ef3ba477a33a8e37",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2024-05-22 (localized TR/FA)",
+        "jurisdiction": "Global (localized Google ToS)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "ebeveyn",
+          "izin"
+        ],
+        "rationale": "Requires parental/guardian permission if below minimum age, plus service-specific age terms.",
+        "visible_facts": [
+          "uyum (Kullanıcı genel şartlara uymayı kabul etmiştir) = yes"
+        ],
+        "missing_facts": [
+          "ebeveyn",
+          "izin"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Google Terms of Service) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_019",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "tr",
+        "source_title": "Wikimedia Kullanım Koşulları (TR) — Ücretli Katkı İfşası",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/tr",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "Bir ajans ödeme aldığı düzenlemeyi açıklama eklemeden yayınlayabilir mi?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_wiki_paid",
+          "title": "Vikipedi Katkı Kontrolü",
+          "scope": "Wikimedia Kullanım Koşulları Bölüm 4",
+          "terms": [
+            {
+              "id": "tarafsiz",
+              "label": "İçerik telif hakkı yasalarına uygundur",
+              "why": "Temel kural",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "tarafsiz": "yes"
+        },
+        "source_text": "karşılığında bedel aldığınız ya da almayı umduğumuz katkılarınızla ilişkili olarak işvereninizi, müşterinizi ve aracı kurumlarla ilişkinizi ifşa etmelisiniz.\nKendi parolanızın korunmasından siz sorumlusunuz ve parolanızı üçüncü şahıslarla asla paylaşmamalısınız.",
+        "source_sha256": "7de30aba7cc36bf22f9f72b4c455c3dbba3b9fb0c34349630ce64e8c7aad12e5",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "2023-06-07 (localized TR/FA)",
+        "jurisdiction": "Global / California (Wikimedia)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "ifşa"
+        ],
+        "rationale": "Turkish policy mandates employer/client disclosure for paid contributions.",
+        "visible_facts": [
+          "tarafsiz (İçerik telif hakkı yasalarına uygundur) = yes"
+        ],
+        "missing_facts": [
+          "ifşa"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Wikimedia Foundation Terms of Use) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_020",
+        "split": "dev",
+        "domain": "privacy_data_fa",
+        "lang": "fa",
+        "source_title": "شرایط خدمات Google (FA) — شرایط سنی",
+        "source_url": "https://policies.google.com/terms?hl=fa",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "آیا کاربر زیر سن قانونی بدون اجازه ولی می‌تواند حساب بسازد و از همه سرویس‌ها استفاده کند؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_google_age",
+          "title": "بررسی حساب کاربری",
+          "scope": "شرایط خدمات Google فارسی",
+          "terms": [
+            {
+              "id": "terms",
+              "label": "کاربر با شرایط عمومی سرویس موافقت کرده است",
+              "why": "پذیرش اولیه",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "terms": "yes"
+        },
+        "source_text": "اگر به سن مقرر برای مدیریت «حساب Google» خود نرسیده باشید، برای استفاده از «حساب Google» به اجازه ولی یا سرپرست قانونی‌تان نیاز دارید.\nبرخی سرویس‌های Google دارای شرایط سنی اضافه‌ای هستند که در خط‌مشی‌ها و شرایط تکمیلی خاص آن سرویس‌ها قید شده است.",
+        "source_sha256": "ec8e054561065fd81a94f49fe68f325a5ca754f24a15b60139e742d3dbe8b1bc",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2024-05-22 (localized TR/FA)",
+        "jurisdiction": "Global (localized Google ToS)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "ولی یا سرپرست"
+        ],
+        "rationale": "Requires legal guardian permission below threshold age and additional service-specific age terms.",
+        "visible_facts": [
+          "terms (کاربر با شرایط عمومی سرویس موافقت کرده است) = yes"
+        ],
+        "missing_facts": [
+          "ولی یا سرپرست"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Google Terms of Service) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_021",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "fa",
+        "source_title": "شرایط خدمات Google (FA) — ممنوعیت تزریق پیام‌واره و بدافزار",
+        "source_url": "https://policies.google.com/terms?hl=fa",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "آیا آزمایش نفوذ خارج از برنامه‌های امنیتی روی سرویس مجاز است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_google_abuse",
+          "title": "بررسی دسترسی امنیتی",
+          "scope": "شرایط خدمات Google بخش سوءاستفاده",
+          "terms": [
+            {
+              "id": "account",
+              "label": "حساب کاربری معتبر فعال است",
+              "why": "احراز کاربر",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "account": "yes"
+        },
+        "source_text": "نباید از سرویس‌ها یا سیستم‌های ما سوءاستفاده کنید، به آن‌ها خسارت وارد کنید، در آن‌ها تداخل ایجاد کنید، یا آن‌ها را مختل کنید.\nقفل‌شکنی، ارسال پیام‌واره خصمانه، یا تزریق پیام‌واره، به‌جز به‌عنوان بخشی از برنامه‌های ایمنی و آزمایش اِشکال، مجاز نیست.",
+        "source_sha256": "1d5b37ad483c81161b2b9ffea0e573bbceeb7ff11cdc2adc886cc5b7f5ebc268",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2024-05-22 (localized TR/FA)",
+        "jurisdiction": "Global (localized Google ToS)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "برنامه‌های ایمنی"
+        ],
+        "rationale": "Prohibits prompt injection / disruption except inside approved safety and bug-testing programs.",
+        "visible_facts": [
+          "account (حساب کاربری معتبر فعال است) = yes"
+        ],
+        "missing_facts": [
+          "برنامه‌های ایمنی"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Google Terms of Service) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_022",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "fa",
+        "source_title": "شرایط استفاده ویکی‌مدیا (FA) — آزمایش آسیب‌پذیری مشروط",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/fa",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "آیا اسکن امنیتی شبکه‌های پروژه بدون گزارش آسیب‌پذیری مجاز است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_wiki_scan",
+          "title": "بررسی تست امنیت ویکی‌مدیا",
+          "scope": "شرایط استفاده ویکی‌مدیا بخش ۴",
+          "terms": [
+            {
+              "id": "non_malicious",
+              "label": "اقدام با نیت بدخواهانه انجام نمی‌شود",
+              "why": "حسن نیت",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "non_malicious": "yes"
+        },
+        "source_text": "کاوش، اسکن و یا آزمایش آسیب پذیری هر کدام از سیستم‌های فنی و یا شبکه‌های ما ممنوع است مگر اینکه همه شرایط زیر برقرار باشد:\nهرگونه آسیب‌پذیری را به توسعه‌دهندگان مدیاویکی گزارش دهید (یا خودتان آن را رفع کنید).",
+        "source_sha256": "31c6ea852e6a5ba87a5787b332e6c88f7e84ffedd0792c9f387c64403da2e0d8",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "2023-06-07 (localized TR/FA)",
+        "jurisdiction": "Global / California (Wikimedia)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "گزارش"
+        ],
+        "rationale": "Requires reporting any found vulnerability to MediaWiki developers (exception condition omitted).",
+        "visible_facts": [
+          "non_malicious (اقدام با نیت بدخواهانه انجام نمی‌شود) = yes"
+        ],
+        "missing_facts": [
+          "گزارش"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Wikimedia Foundation Terms of Use) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_023",
+        "split": "dev",
+        "domain": "platform_governance",
+        "lang": "fa",
+        "source_title": "شرایط استفاده ویکی‌مدیا (FA) — مشارکت‌های پولی",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/fa",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "آیا ویرایشگر دارای قرارداد مالی بدون افشای کارفرما می‌تواند مشارکت کند؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_wiki_paid",
+          "title": "بررسی مشارکت ویکی",
+          "scope": "بند مشارکت‌های پولی",
+          "terms": [
+            {
+              "id": "civility",
+              "label": "کاربر نزاکت و ادب را رعایت می‌کند",
+              "why": "رفتار اجتماعی",
+              "cost": 1,
+              "weight": 3
+            }
+          ]
+        },
+        "observations": {
+          "civility": "yes"
+        },
+        "source_text": "شما باید هر کارفرما، مشتری، ذی‌نفع مورد نظر و وابستگی خود را در ارتباط با هر مشارکتی که بابت آن جبران خدمات دریافت می‌کنید یا انتظار دریافت آن را دارید، افشا نمایید.",
+        "source_sha256": "389d6132277b9fa1f2d56f5dea4b4dc0bffe01cf6224a09655f671756e2297d0",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "2023-06-07 (localized TR/FA)",
+        "jurisdiction": "Global / California (Wikimedia)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "افشا"
+        ],
+        "rationale": "Explicit obligation requiring paid contributors to disclose employer, client, and affiliation.",
+        "visible_facts": [
+          "civility (کاربر نزاکت و ادب را رعایت می‌کند) = yes"
+        ],
+        "missing_facts": [
+          "افشا"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Wikimedia Foundation Terms of Use) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_024",
+        "split": "dev",
+        "domain": "privacy_data_fa",
+        "lang": "fa",
+        "source_title": "شرایط استفاده ویکی‌مدیا (FA) — ممنوعیت افشای گذرواژه",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/fa",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "آیا اشتراک‌گذاری گذرواژه حساب با پیمانکار شخص ثالث مجاز است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_wiki_pw",
+          "title": "کنترل امنیت گذرواژه",
+          "scope": "بند ۵ شرایط استفاده ویکی‌مدیا",
+          "terms": [
+            {
+              "id": "no_share",
+              "label": "گذرواژه برای هیچ شخص ثالثی افشا نمی‌شود",
+              "why": "امنیت حساب",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "no_share": "no"
+        },
+        "source_text": "شما مسئول حفظ امنیت گذرواژه‌تان هستید و نباید آن را برای هیچ شخص ثالثی افشا کنید.",
+        "source_sha256": "e2b2d4a4bca9caf5fa6b8ea5b84e5195eeed351bb8ddd9d2aeb2939d035d1c17",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "2023-06-07 (localized TR/FA)",
+        "jurisdiction": "Global / California (Wikimedia)"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "Required safeguard (not disclosing password to third parties) is confirmed `no`.",
+        "visible_facts": [
+          "no_share (گذرواژه برای هیچ شخص ثالثی افشا نمی‌شود) = no"
+        ],
+        "missing_facts": [
+          "Denied checklist prerequisite: no_share"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Wikimedia Foundation Terms of Use) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_025",
+        "split": "heldout_blind",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "Apache License 2.0 Section 6 Trademarks",
+        "source_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Does Apache-2.0 permit branding a SaaS product with the licensor's trademark?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apache_tm",
+          "title": "Apache-2.0 Brand Compliance",
+          "scope": "Apache-2.0 Section 6",
+          "terms": [
+            {
+              "id": "copyright",
+              "label": "Copyright notices from Source form retained",
+              "why": "Section 4(c)",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "copyright": "yes"
+        },
+        "source_text": "This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.",
+        "source_sha256": "669e24e7ea7291e51e83bfa4de64433962ca07421b544da2044f0f2fb1896c3c",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Apache-2.0 (2004-01)",
+        "jurisdiction": "Global / US Copyright & Patent Law"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "trademarks"
+        ],
+        "rationale": "License explicitly withheld trademark permission except for origin/NOTICE attribution.",
+        "visible_facts": [
+          "copyright (Copyright notices from Source form retained) = yes"
+        ],
+        "missing_facts": [
+          "trademarks"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apache Software Foundation v2.0) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_026",
+        "split": "heldout_blind",
+        "domain": "oss_licensing",
+        "lang": "en",
+        "source_title": "Mozilla Public License 2.0 Section 1.5 Secondary License Restriction",
+        "source_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MPL-2.0.txt",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can we automatically relicense this MPL-2.0 codebase as GPL-2.0?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_mpl_sec",
+          "title": "MPL-2.0 Compatibility Check",
+          "scope": "MPL-2.0 Definitions 1.5",
+          "terms": [
+            {
+              "id": "src_form",
+              "label": "Source code is maintained in Source Code Form",
+              "why": "Basic definition",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "src_form": "yes"
+        },
+        "source_text": "Incompatible With Secondary Licenses means (a) that the initial Contributor has attached the notice described in Exhibit B to the Covered Software; or (b) that the Covered Software was made available under the terms of version 1.1 or earlier of the License, but not also under the terms of a Secondary License.",
+        "source_sha256": "5383d64d23b57a6dceb8a496b0bdf7bf31eb1953bb5ba81995d263667dd389c5",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "MPL-2.0 (2012-01)",
+        "jurisdiction": "Global / Mozilla Public License"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "Exhibit B"
+        ],
+        "rationale": "Missing check for Exhibit B notice or version 1.1 compatibility restriction.",
+        "visible_facts": [
+          "src_form (Source code is maintained in Source Code Form) = yes"
+        ],
+        "missing_facts": [
+          "Exhibit B"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Mozilla Foundation v2.0) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_027",
+        "split": "heldout_blind",
+        "domain": "retail_returns",
+        "lang": "en",
+        "source_title": "Apple Retail — 14-Day Price Protection Exclusions",
+        "source_url": "https://www.apple.com/legal/sales-support/sales-policies/retail_us.html",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Does a Black Friday promotion qualify for automatic 15-unit price adjustment?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apple_price",
+          "title": "Price Match Check",
+          "scope": "Apple Price Reductions Policy",
+          "terms": [
+            {
+              "id": "within14",
+              "label": "Price dropped within 14 calendar days of receipt",
+              "why": "Price window",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "within14": "yes"
+        },
+        "source_text": "This excludes limited-time price reductions and special sales events, such as Black Friday.\nPrice protection is limited to 10 units of a particular product and we may require that you have the product with you and/or have proof of possession to use it.",
+        "source_sha256": "6883b1ad87cf0e9bd33d0215a54373e4770643ae2b9a78304131cf6a3d2db834",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "United States (Apple Retail US)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "Black Friday",
+          "10 units"
+        ],
+        "rationale": "Policy excludes special sales events like Black Friday, caps at 10 units, and requires proof of possession.",
+        "visible_facts": [
+          "within14 (Price dropped within 14 calendar days of receipt) = yes"
+        ],
+        "missing_facts": [
+          "Black Friday",
+          "10 units"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apple US Retail Sales & Refund Policy) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_028",
+        "split": "heldout_blind",
+        "domain": "retail_returns",
+        "lang": "en",
+        "source_title": "Apple Retail — Clean In-Store Pickup Gate",
+        "source_url": "https://www.apple.com/legal/sales-support/sales-policies/retail_us.html",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can the customer pick up their paid in-store pickup order right now?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_apple_pickup_clean",
+          "title": "In-Store Pickup Verification",
+          "scope": "Apple Store US Pickup",
+          "terms": [
+            {
+              "id": "id_card",
+              "label": "Customer presents a government-issued photo ID",
+              "why": "Required for pickup",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "ord_num",
+              "label": "Customer provides the order number for pickup",
+              "why": "Required for pickup",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "id_card": "yes",
+          "ord_num": "yes"
+        },
+        "source_text": "Only you or the person designated by you may pick up the item(s) purchased.\nA government-issued photo ID and order number will be required for pickup.",
+        "source_sha256": "1830ec747abbe848e63112977e6d2df9eee5afbaefbde7336c2eee16c37bd7d9",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "United States (Apple Retail US)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "person designated"
+        ],
+        "rationale": "First sentence restricts pickup strictly to buyer or designated person (not verified in checklist!).",
+        "visible_facts": [
+          "id_card (Customer presents a government-issued photo ID) = yes",
+          "ord_num (Customer provides the order number for pickup) = yes"
+        ],
+        "missing_facts": [
+          "person designated"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Apple US Retail Sales & Refund Policy) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_029",
+        "split": "heldout_blind",
+        "domain": "platform_governance",
+        "lang": "en",
+        "source_title": "GitHub Acceptable Use Policies — Section 7 Research Open-Access Rule",
+        "source_url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "May researchers scrape public GitHub data for a closed commercial paywalled report?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_github_research",
+          "title": "GitHub Research Scraping Policy",
+          "scope": "GitHub AUP Section 7",
+          "terms": [
+            {
+              "id": "non_personal",
+              "label": "Scraped information is strictly public and non-personal",
+              "why": "Privacy boundary",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "non_personal": "yes"
+        },
+        "source_text": "Researchers may use public, non-personal information from the Service for research purposes, only if any publications resulting from that research are open access.",
+        "source_sha256": "f50421a6b02c28018094cd630c3dd3b41ee977857a12d4dd4768f4d76114b93f",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "Global / US (GitHub Terms)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "open access"
+        ],
+        "rationale": "Permitted only if resulting publications are open access (omitted from checklist).",
+        "visible_facts": [
+          "non_personal (Scraped information is strictly public and non-personal) = yes"
+        ],
+        "missing_facts": [
+          "open access"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (GitHub Site Policy / AUP) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_030",
+        "split": "heldout_blind",
+        "domain": "platform_governance",
+        "lang": "en",
+        "source_title": "GitHub Acceptable Use Policies — Section 6 Service Resale Ban",
+        "source_url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Can we resell access to GitHub's hosted Service without express written permission?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_github_resell_no",
+          "title": "Service Resale Prohibition",
+          "scope": "GitHub AUP Section 6",
+          "terms": [
+            {
+              "id": "written_perm",
+              "label": "GitHub provided express written permission to resell the Service",
+              "why": "Mandatory consent",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "written_perm": "no"
+        },
+        "source_text": "You will not reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service without our express written permission.",
+        "source_sha256": "25ad6a98c169fd42c97c16c36f0a32b22c95ea6ef188b2ca7cd53763d2dc2af3",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "Active as captured 2026-11-22",
+        "jurisdiction": "Global / US (GitHub Terms)"
+      },
+      "ground_truth": {
+        "gt_decision": "NO",
+        "hidden_requirements": [],
+        "rationale": "Express written permission is confirmed `no`.",
+        "visible_facts": [
+          "written_perm (GitHub provided express written permission to resell the Service) = no"
+        ],
+        "missing_facts": [
+          "Denied checklist prerequisite: written_perm"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (GitHub Site Policy / AUP) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_031",
+        "split": "heldout_blind",
+        "domain": "distance_law_tr",
+        "lang": "tr",
+        "source_title": "Resmi Gazete 29188 — Madde 10 Eksik Bilgilendirme (1 Yıl Uzama)",
+        "source_url": "https://www.resmigazete.gov.tr/eskiler/2014/11/20141127-6.htm",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Satıcı tüketiciye cayma hakkını bildirmediyse 14 günlük süre dolunca talep reddedilebilir mi?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_madde10",
+          "title": "TR Eksik Bilgilendirme Kontrolü",
+          "scope": "Mesafeli Sözleşmeler Md. 10",
+          "terms": [
+            {
+              "id": "gec",
+              "label": "Teslimat üzerinden en az on dört gün geçmiştir",
+              "why": "Tarih hesabı",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "gec": "yes"
+        },
+        "source_text": "Satıcı veya sağlayıcı, cayma hakkı konusunda tüketicinin bilgilendirildiğini ispat etmekle yükümlüdür.\nTüketici, cayma hakkı konusunda gerektiği şekilde bilgilendirilmezse, cayma hakkını kullanmak için on dört günlük süreyle bağlı değildir.\nBu süre her halükarda cayma süresinin bittiği tarihten itibaren bir yıl sonra sona erer.",
+        "source_sha256": "79cf2c0222e61a4d7c710fa9f6283ecbcc8ecc00e5902ed28f82dbf9a07408f1",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2014-11-27 (Resmi Gazete 29188, amended)",
+        "jurisdiction": "Republic of Turkey"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "bilgilendirildiğini ispat",
+          "bir yıl"
+        ],
+        "rationale": "Seller bears burden of proving disclosure; failure extends window up to 1 year.",
+        "visible_facts": [
+          "gec (Teslimat üzerinden en az on dört gün geçmiştir) = yes"
+        ],
+        "missing_facts": [
+          "bilgilendirildiğini ispat",
+          "bir yıl"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Mesafeli Sözleşmeler Yönetmeliği) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_032",
+        "split": "heldout_blind",
+        "domain": "platform_governance",
+        "lang": "tr",
+        "source_title": "Google Hizmet Şartları (TR) — Tersine Mühendislik ve Yapay Zeka Yasağı",
+        "source_url": "https://policies.google.com/terms?hl=tr",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Çıktıları başka bir makine öğrenimi modeli eğitmek için doğrudan kullanabilir miyiz?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_ai_ban",
+          "title": "Google AI Hizmet Kullanımı",
+          "scope": "Google Hizmet Şartları TR",
+          "terms": [
+            {
+              "id": "hesap",
+              "label": "Erişim geçerli bir kullanıcı hesabıyla yapılmaktadır",
+              "why": "Erişim durumu",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "hesap": "yes"
+        },
+        "source_text": "geçerli yasaların izin verdiği durumlar dışında ticari sırları veya şirkete ait diğer özel bilgileri ele geçirmek için hizmetlerimize ya da makine öğrenimi modellerimiz gibi temel teknolojilerimize tersine mühendislik uygulamamalıdır.\nhizmetlerimizden üretilen yapay zeka içeriklerini makine öğrenimi modelleri veya ilgili yapay zeka teknolojisini geliştirmek amacıyla kullanmamalısınız.",
+        "source_sha256": "40fc49dbf351e1c007f30cb082bc9dd924f2990731005d5dd3f116b97b2c1558",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2024-05-22 (localized TR/FA)",
+        "jurisdiction": "Global (localized Google ToS)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "tersine mühendislik",
+          "yapay zeka"
+        ],
+        "rationale": "Turkish clauses explicitly restrict reverse engineering and ML model training on generated AI outputs.",
+        "visible_facts": [
+          "hesap (Erişim geçerli bir kullanıcı hesabıyla yapılmaktadır) = yes"
+        ],
+        "missing_facts": [
+          "tersine mühendislik",
+          "yapay zeka"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Google Terms of Service) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_033",
+        "split": "heldout_blind",
+        "domain": "distance_law_tr",
+        "lang": "tr",
+        "source_title": "Resmi Gazete 29188 — Madde 13(1) 10 Gün İade Gönderim (Temiz)",
+        "source_url": "https://www.resmigazete.gov.tr/eskiler/2014/11/20141127-6.htm",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "Tüketici cayma bildiriminden sonra malı belirlenen süre içinde iade ediyor mu?",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_tr_madde13_clean",
+          "title": "TR İade Gönderim Kontrolü",
+          "scope": "Mesafeli Sözleşmeler Yönetmeliği Md. 13(1)",
+          "terms": [
+            {
+              "id": "on_gun",
+              "label": "Tüketici cayma bildirimini yönelttiği tarihten itibaren on gün içinde malı geri göndermektedir",
+              "why": "Madde 13(1) gönderim süresi",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "uygun_kullanim",
+              "label": "Mal cayma süresi içinde işleyişine ve kullanım talimatlarına uygun kullanılmıştır",
+              "why": "Madde 13(2) kullanım sınırı",
+              "cost": 2,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "on_gun": "yes",
+          "uygun_kullanim": "yes"
+        },
+        "source_text": "Tüketici cayma hakkını kullandığına ilişkin bildirimi yönelttiği tarihten itibaren on gün içinde malı satıcı veya sağlayıcıya ya da yetkilendirmiş olduğu kişiye geri göndermek zorundadır.\nTüketici, cayma süresi içinde malı, işleyişine, teknik özelliklerine ve kullanım talimatlarına uygun bir şekilde kullandığı takdirde meydana gelen değişiklik ve bozulmalardan sorumlu değildir.",
+        "source_sha256": "7cd13611b963bbc4ffa66b68285db38c059937423bfe36561c77f098a3494b5e",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2014-11-27 (Resmi Gazete 29188, amended)",
+        "jurisdiction": "Republic of Turkey"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "Clean verified restatement of Madde 13(1)-(2) 10-day return & proper usage terms.",
+        "visible_facts": [
+          "on_gun (Tüketici cayma bildirimini yönelttiği tarihten itibaren on gün içinde malı geri göndermektedir) = yes",
+          "uygun_kullanim (Mal cayma süresi içinde işleyişine ve kullanım talimatlarına uygun kullanılmıştır) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Audited Turkish Resmi Gazete 29188 Md. 13(1)-(2): source cites \"isleyisine, teknik ozelliklerine ve kullanim talimatlarina uygun\". Checklist term uygun_kullanim paraphrases proper operation & instructions; legal duty of proof & safe-harbor non-liability clause align without adding unmodeled returns restrictions."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_034",
+        "split": "heldout_blind",
+        "domain": "privacy_data_fa",
+        "lang": "fa",
+        "source_title": "شرایط خدمات Google (FA) — مهندسی معکوس مدل‌های یادگیری ماشین",
+        "source_url": "https://policies.google.com/terms?hl=fa",
+        "captured_utc": "2026-11-22T10:13:00Z",
+        "question": "آیا استفاده از خروجی‌های هوش مصنوعی سرویس برای آموزش مدل رقیب مجاز است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_google_ml",
+          "title": "کنترل دسترسی و استفاده از مدل",
+          "scope": "شرایط خدمات Google فارسی",
+          "terms": [
+            {
+              "id": "auth",
+              "label": "دسترسی کاربر با حساب مجاز انجام می‌شود",
+              "why": "احراز هویت",
+              "cost": 1,
+              "weight": 4
+            }
+          ]
+        },
+        "observations": {
+          "auth": "yes"
+        },
+        "source_text": "نباید مهندسی معکوس سرویس‌ها یا فناوری‌های اساسی ما، مثل مدل‌های یادگیری ماشین ما، برای استخراج اسرار تجاری یا دیگر اطلاعات اختصاصی انجام شود، به‌جز تاحد مجاز طبق قوانین ذی‌ربط.\nاستفاده از محتوای تولیدشده با هوش مصنوعی از سرویس‌های ما برای توسعه مدل‌های یادگیری ماشین یا فناوری هوش مصنوعی مرتبط مجاز نیست.",
+        "source_sha256": "95250b555b6f3a26240c41208878c821d97d904f0ebcb665fbf4e7afb06ec45b",
+        "retrieval_utc": "2026-11-22T10:13:00Z",
+        "policy_effective_date": "2024-05-22 (localized TR/FA)",
+        "jurisdiction": "Global (localized Google ToS)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "مهندسی معکوس",
+          "هوش مصنوعی"
+        ],
+        "rationale": "Persian clauses ban reverse engineering ML models and using AI outputs to train competing ML models.",
+        "visible_facts": [
+          "auth (دسترسی کاربر با حساب مجاز انجام می‌شود) = yes"
+        ],
+        "missing_facts": [
+          "مهندسی معکوس",
+          "هوش مصنوعی"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Google Terms of Service) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_035",
+        "split": "heldout_blind",
+        "domain": "platform_governance",
+        "lang": "fa",
+        "source_title": "شرایط استفاده ویکی‌مدیا (FA) — اولویت نسخه انگلیسی و منع توصیه تخصصی",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/fa",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "آیا می‌توان با تکیه بر متن فارسی به‌عنوان مشاوره پزشکی قطعی تصمیم گرفت؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_wiki_advice",
+          "title": "اعتبارسنجی راهنمایی تخصصی",
+          "scope": "شرایط استفاده ویکی‌مدیا",
+          "terms": [
+            {
+              "id": "public",
+              "label": "مطلب در وب‌گاه عمومی پروژه منتشر شده است",
+              "why": "دسترسی به منبع",
+              "cost": 1,
+              "weight": 3
+            }
+          ]
+        },
+        "observations": {
+          "public": "yes"
+        },
+        "source_text": "در صورت وجود هرگونه تفاوت در معنا یا تفسیر بین نسخه انگلیسی اصلی این محتوا و ترجمه، نسخه انگلیسی اصلی اولویت دارد.\nنباید این مطالب را به عنوان توصیه‌های تخصصی در نظر گرفت و باید با کسی که واجد شرایط یا دارای جواز در موضوع مربوطه می‌باشد مشاورهٔ مستقل تخصصی کنید.",
+        "source_sha256": "00dc62518d39f574a421ab3c24e0c5fccfeb3dc5b82fa65e22e7699d5755e45e",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "2023-06-07 (localized TR/FA)",
+        "jurisdiction": "Global / California (Wikimedia)"
+      },
+      "ground_truth": {
+        "gt_decision": "ASK",
+        "hidden_requirements": [
+          "نسخه انگلیسی",
+          "توصیه‌های تخصصی"
+        ],
+        "rationale": "Excerpts warn against treating content as professional advice and subordinate translations to English.",
+        "visible_facts": [
+          "public (مطلب در وب‌گاه عمومی پروژه منتشر شده است) = yes"
+        ],
+        "missing_facts": [
+          "نسخه انگلیسی",
+          "توصیه‌های تخصصی"
+        ],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Source (Wikimedia Foundation Terms of Use) verified against visible_facts and missing_facts."
+      }
+    },
+    {
+      "visible_input": {
+        "sample_id": "rw_036",
+        "split": "heldout_blind",
+        "domain": "platform_governance",
+        "lang": "fa",
+        "source_title": "شرایط استفاده ویکی‌مدیا (FA) — امنیت گذرواژه (تطبیق کامل تمیز)",
+        "source_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/fa",
+        "captured_utc": "2026-11-22T10:15:00Z",
+        "question": "آیا شرایط نگهداری گذرواژه برای استفاده ایمن از حساب رعایت شده است؟",
+        "scopeAccepted": true,
+        "sourceVerified": true,
+        "coverageReviewed": true,
+        "policy": {
+          "id": "rw_fa_wiki_pw_clean",
+          "title": "بررسی امنیت گذرواژه",
+          "scope": "بند ۵ شرایط استفاده ویکی‌مدیا",
+          "terms": [
+            {
+              "id": "security",
+              "label": "کاربر مسئول حفظ امنیت گذرواژه‌ خود است",
+              "why": "تعهد نگهداری",
+              "cost": 1,
+              "weight": 5
+            },
+            {
+              "id": "third_party",
+              "label": "گذرواژه برای هیچ شخص ثالثی افشا نمی‌شود",
+              "why": "ممنوعیت افشا",
+              "cost": 1,
+              "weight": 5
+            }
+          ]
+        },
+        "observations": {
+          "security": "yes",
+          "third_party": "yes"
+        },
+        "source_text": "شما مسئول حفظ امنیت گذرواژه‌تان هستید و نباید آن را برای هیچ شخص ثالثی افشا کنید.",
+        "source_sha256": "e2b2d4a4bca9caf5fa6b8ea5b84e5195eeed351bb8ddd9d2aeb2939d035d1c17",
+        "retrieval_utc": "2026-11-22T10:15:00Z",
+        "policy_effective_date": "2023-06-07 (localized TR/FA)",
+        "jurisdiction": "Global / California (Wikimedia)"
+      },
+      "ground_truth": {
+        "gt_decision": "YES",
+        "hidden_requirements": [],
+        "rationale": "Both security responsibility and non-disclosure conditions are explicitly restated and confirmed `yes`.",
+        "visible_facts": [
+          "security (کاربر مسئول حفظ امنیت گذرواژه‌ خود است) = yes",
+          "third_party (گذرواژه برای هیچ شخص ثالثی افشا نمی‌شود) = yes"
+        ],
+        "missing_facts": [],
+        "gold_audit_status": "AUDITED_VERIFIED_2026_11_22",
+        "independent_review_note": "Audited Wikimedia Terms of Use (FA) Sec 5: compound sentence joins password custody and non-disclosure clauses with identical prohibition polarity and verified observations."
+      }
+    }
+  ]
+}

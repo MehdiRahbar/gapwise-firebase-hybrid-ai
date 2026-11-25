@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">GAPWISE</title>
+  <desc id="logoDesc">Four colored rounded segments surrounding a central decision point.</desc>
+  <rect x="4" y="4" width="72" height="72" rx="19" fill="#F6F8FB"/>
+  <path d="M20 39 V28 Q20 20 29 20 H39" fill="none" stroke="#4285F4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 40 V29 Q60 20 51 20 H48" fill="none" stroke="#20B69E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 48 V52 Q20 60 29 60 H39" fill="none" stroke="#F6B83C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 49 V52 Q60 60 51 60 H48" fill="none" stroke="#E66D79" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="40" r="7" fill="#253A5A"/>
+  <circle cx="40" cy="40" r="2.4" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafd">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="GAPWISE — Find the missing information before you decide">
+  <title>GAPWISE • Know what you don't know</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/gapwise-logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar" id="topbar">
+      <div class="topbar-leading">
+        <button id="navToggle" type="button" class="icon-button" aria-controls="appNav" aria-expanded="true" aria-label="Collapse navigation" title="Collapse navigation">☰</button>
+        <a href="#workbench" class="brand" aria-label="GAPWISE home"><img class="brand-logo" src="./assets/gapwise-logo.svg" alt=""><span>GAP<span class="accent">WISE</span></span></a>
+      </div>
+      <div class="top-nav">
+        <span class="pill">BUILD HYBRID AI 2026</span>
+        <span class="status-pill" id="modeBadge" aria-live="polite">● DETERMINISTIC DEMO</span>
+        <button id="settingsBtn" type="button" class="outline tiny">Settings <span aria-hidden="true">⌄</span></button>
+      </div>
+    </header>
+
+    <button id="navScrim" type="button" class="nav-scrim" aria-label="Close navigation" aria-hidden="true" tabindex="-1"></button>
+
+    <div class="workspace">
+      <aside id="appNav" class="sidebar" aria-label="GAPWISE navigation">
+        <div class="drawer-kicker"><img class="drawer-logo" src="./assets/gapwise-logo.svg" alt=""> <span>GAPWISE WORKSPACE</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <button type="button" class="nav-item active" data-nav-target="#workbench" aria-current="page"><span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Workbench</span></button>
+          <button type="button" class="nav-item" data-nav-target="#sample-cases"><span class="nav-icon" aria-hidden="true">▦</span><span class="nav-label">Sample cases</span></button>
+          <button type="button" class="nav-item" data-nav-target="#sourceDetails"><span class="nav-icon" aria-hidden="true">⌁</span><span class="nav-label">Source &amp; coverage</span></button>
+          <button type="button" class="nav-item" data-nav-target="#adaptive-section"><span class="nav-icon" aria-hidden="true">?</span><span class="nav-label">Adaptive questions</span></button>
+          <button type="button" class="nav-item" data-nav-target="#evidence-section"><span class="nav-icon" aria-hidden="true">▤</span><span class="nav-label">Evidence &amp; history</span></button>
+          <button type="button" class="nav-item" data-nav-action="settings"><span class="nav-icon" aria-hidden="true">⚙</span><span class="nav-label">Settings</span></button>
+        </nav>
+        <div class="drawer-divider"></div>
+        <div class="drawer-section" id="sample-cases">
+          <div class="section-label">DEMO CASES</div>
+        <div id="examples" class="example-list"></div>
+        </div>
+        <div class="tip">
+          <span aria-hidden="true">◆</span>
+          <strong>Why this matters</strong>
+          <p>Most assistants fill missing facts with plausible guesses. GAPWISE shows what is unknown and marks approvals strictly as conditional human-attested records.</p>
+        </div>
+        <div class="note">Demo policies are fictional. Never rely on their decisions as legal, financial, or medical guidance.</div>
+      </aside>
+
+      <main class="main" id="workbench" tabindex="-1">
+        <section class="workbench-intro" aria-labelledby="workbench-title">
+          <div class="intro-copy">
+            <p class="eyebrow">DECISION WORKBENCH</p>
+            <h1 id="workbench-title">See what's missing <em>before</em> you decide.</h1>
+            <p class="subtitle">An evidence-first gate that finds hidden conditions, asks the next useful question, and refuses unsupported certainty.</p>
+            <div class="micro"><span>● No silent assumptions</span><span>● Source-aware checks</span><span>● Provenance stays visible</span></div>
+          </div>
+          <aside class="hero-stat" aria-label="Engine guarantees">
+            <div class="stat-heading"><span class="status-dot" aria-hidden="true"></span><small>ENGINE READY</small></div>
+            <div class="stat-row"><b>5</b><span>explicit decision states</span></div>
+            <div class="stat-row"><b>0</b><span>auto-approval without checks</span></div>
+          </aside>
+        </section>
+
+        <nav class="stepper" aria-label="Decision workflow">
+          <button type="button" class="step active" data-nav-target="#question-step"><span>1</span><strong>Ask</strong><small>Set the decision</small></button>
+          <button type="button" class="step" data-nav-target="#checklist-step"><span>2</span><strong>Verify</strong><small>Check conditions</small></button>
+          <button type="button" class="step" data-nav-target="#source-audit-step"><span>3</span><strong>Review</strong><small>Inspect source gaps</small></button>
+          <button type="button" class="step" data-nav-target="#adaptive-section"><span>4</span><strong>Adapt</strong><small>Answer what matters</small></button>
+          <button type="button" class="step" data-nav-target="#result"><span>5</span><strong>Decide</strong><small>Export the record</small></button>
+        </nav>
+
+        <div class="panel question-panel" id="question-step">
+          <div class="panel-top">
+            <div><span class="step-number">01</span><label for="question" class="section-label">ASK</label></div>
+            <span class="marker">User question</span>
+          </div>
+          <textarea id="question" rows="3" dir="auto" aria-label="Question"></textarea>
+          <div class="actions">
+            <button type="button" class="primary" id="analyzeBtn">✧ Discover missing conditions</button>
+            <button type="button" class="outline tiny" id="cancelAnalyzeBtn" hidden>Stop waiting</button>
+            <span id="aiProgress" class="smalltext" role="status" aria-live="polite">Rules &amp; heuristic scan only until Firebase is connected.</span>
+          </div>
+          <div id="modelSuggestions" class="suggestions" hidden></div>
+        </div>
+
+        <div class="panel" id="checklist-step">
+          <div class="panel-top">
+            <div><span class="step-number">02</span><span class="section-label">VERIFY</span></div>
+            <span id="progressLabel" class="marker">0 answered</span>
+          </div>
+          <h2>What must be true?</h2>
+          <p class="caption" id="sourceLabel"></p>
+          <div id="checklist" class="checklist"></div>
+          <div class="add-line">
+            <input id="extraCondition" dir="auto" placeholder="Add another required condition missed by the model…" aria-label="Add extra requirement" maxlength="300">
+            <button type="button" class="outline" id="addConditionBtn">+ Add condition</button>
+          </div>
+          <details class="source-details" id="sourceDetails" open>
+            <summary>Independent source and coverage controls</summary>
+            <p>Paste policy text or upload a .txt/.md file. The local scanner is heuristic (non-exhaustive) and AI proposals stay untrusted until reviewed.</p>
+            <div class="actions">
+              <button type="button" id="loadSampleSourceBtn" class="outline tiny">Load fictional sample document</button>
+              <button type="button" id="customCaseBtn" class="outline tiny">+ Start custom case</button>
+            </div>
+            <div class="meta-inputs">
+              <label>Source title / reference <input id="sourceNameInput" type="text" maxlength="160" placeholder="e.g. Store Policy Rev 2026-11"></label>
+              <label>Verifier name / role (optional) <input id="reviewerName" type="text" maxlength="120" placeholder="Recorded in export or marked unverified"></label>
+            </div>
+            <textarea id="sourceText" rows="5" dir="auto" aria-label="Independent policy or contract source text" placeholder="Paste your policy, contract, terms, or requirements here. The system only suggests checks; it cannot verify external authenticity."></textarea>
+            <input id="sourceFile" type="file" accept=".txt,.md,text/plain,text/markdown" aria-label="Upload policy text file (.txt or .md)">
+            <label class="check"><input id="scopeAccepted" type="checkbox" checked> This case is within the stated policy's scope</label>
+            <label class="check"><input id="sourceVerified" type="checkbox"> I manually checked the authenticity and applicability of this supplied source (human-attested, not cryptographic proof)</label>
+            <label class="check"><input id="coverageReviewed" type="checkbox"> I reviewed every proposed source/AI requirement and checked checklist coverage (does not prove unknown-unknown completeness)</label>
+            <div class="contract-box" id="attestationContract">
+              <strong>Human Attestation Contract</strong>
+              <p>Positive verdicts NEVER come from autonomous AI certainty. Checking these boxes asserts that (1) you manually confirmed the supplied source is genuine and applicable, (2) you reviewed every pending scan/AI suggestion, and (3) any <code>YES</code> remains a case-versioned <code>CONDITIONAL · HUMAN-ATTESTED</code> record (not cryptographic proof or exhaustive world knowledge) that invalidates automatically on edit.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="panel" id="source-audit-step">
+          <div class="panel-top">
+            <div><span class="step-number">03</span><span class="section-label">REVIEW</span></div>
+            <span class="marker" id="reviewCounter">0 awaiting review</span>
+          </div>
+          <h2>Potential conditions missing from your checklist</h2>
+          <p class="caption">Extracted clauses and AI output are untrusted suggestions. Review, add as unknown, or dismiss with a reason. They never set a fact to Yes.</p>
+          <div id="reviewQueue"></div>
+        </div>
+
+        <div class="result" id="result" role="status" aria-live="polite"></div>
+      </main>
+
+      <aside class="right-rail" id="evidence-section" aria-label="Adaptive inquiry, evidence trail and history">
+        <div class="rail-col-primary" id="adaptive-section">
+          <div class="rail-heading"><span class="section-label">04 / ADAPTIVE INQUIRY</span><span id="adaptiveSummaryPill" class="smalltext"></span></div>
+          <div id="nextQuestion" class="next-card"></div>
+        </div>
+        <div class="rail-col-secondary">
+          <div class="rail-heading"><span class="section-label">EVIDENCE &amp; HISTORY</span></div>
+          <div id="evidenceTrail" class="evidence-trail"></div>
+          <div id="evidenceHealth" class="evidence-health"></div>
+          <div class="rail-heading" style="margin-top:20px"><span class="section-label">DECISION HISTORY</span></div>
+          <div id="auditHistory" class="audit-history"></div>
+          <button type="button" id="exportBtn" class="outline export">⇩ Export transparent audit</button>
+          <div id="exportStatus" class="smalltext export-status" aria-live="polite"></div>
+          <div class="side-footer">Evidence grounded. Certainty bounded.<br><span>Research prototype • not a universal proof</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <span>GAPWISE • MISSING INFORMATION ENGINE</span>
+      <span>Open-world limitations disclosed · Firebase AI Logic hybrid integration · exact SDK source &amp; consent shown after each call</span>
+    </footer>
+  </div>
+
+  <dialog id="settingsDialog" aria-labelledby="settingsDialogTitle">
+    <form method="dialog" class="dialog-inner">
+      <div class="panel-top">
+        <h2 id="settingsDialogTitle">Connect real hybrid inference</h2>
+        <button type="submit" value="cancel" class="outline tiny">Close</button>
+      </div>
+      <p>Paste the <strong>public Firebase web configuration JSON</strong> copied from your Firebase console (or leave blank when build env config exists). Enable Firebase AI Logic and App Check first.</p>
+      <p id="envHint" class="smalltext" hidden></p>
+      <label>Firebase web config JSON<textarea id="firebaseConfig" rows="6" placeholder='{"apiKey":"...","authDomain":"...","projectId":"...","appId":"..."}'></textarea></label>
+      <label>App Check Fraud Defense / reCAPTCHA public site key (required for cloud-capable modes)<input id="appCheckKey" type="text" placeholder="Site key"></label>
+      <label>Inference mode
+        <select id="inferenceMode">
+          <option value="PREFER_ON_DEVICE">Prefer on-device; use cloud with consent if unavailable</option>
+          <option value="ONLY_ON_DEVICE">On-device only; never send prompts to cloud</option>
+          <option value="PREFER_IN_CLOUD">Prefer cloud, use on-device if needed</option>
+          <option value="ONLY_IN_CLOUD">Cloud only</option>
+        </select>
+      </label>
+      <label class="check"><input id="cloudConsent" type="checkbox"> I understand that cloud-capable modes may transmit the question and pasted source to Gemini cloud, and I consent for this test</label>
+      <p class="caution">Do not enter personal, confidential or sensitive documents without explicit permission. The interface never pretends that cloud inference happened locally.</p>
+      <div class="actions">
+        <button type="button" id="connectBtn" class="primary">Connect Firebase</button>
+        <button type="button" id="enableDeviceBtn" class="outline" hidden>Initialize local model</button>
+        <span id="connectStatus" class="smalltext" role="status" aria-live="polite"></span>
+      </div>
+      <p class="smalltext">Real inference source will show <code>on_device</code> or <code>in_cloud</code> only when reported by Firebase SDK. If local Chrome weights or VRAM are unavailable, <code>ONLY_ON_DEVICE</code> fails closed with 0 Cloud calls. Demo mode runs heuristic local text scan only.</p>
+    </form>
+  </dialog>
+
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

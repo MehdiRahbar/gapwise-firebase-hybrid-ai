@@ -1,0 +1,94 @@
+name: GAPWISE CI
+on:
+  push:
+  pull_request:
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install Node dependencies (locked)
+        run: npm ci
+      - name: Install Python QA dependencies & Chromium
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+          playwright install --with-deps chromium
+      - name: Unit tests (JavaScript + Python)
+        run: npm run test:all
+      - name: Pre-GitHub blind 120-case deterministic benchmark
+        run: python evaluation/run_pregithub_eval.py
+      - name: Independent 36-case real-world EN/FA/TR benchmark
+        run: python evaluation/real_world/run_real_world_eval.py --split all
+      - name: Balanced 200-case & Adaptive 100-case EN/FA/TR benchmarks + safety counterexamples
+        run: |
+          python evaluation/balanced_200/run_balanced_eval.py --split all
+          python evaluation/adaptive_100/run_adaptive_eval.py --split all
+          node evaluation/emit_safety_counterexamples.mjs
+      - name: Static preflight & secret hygiene check
+        run: |
+          python scripts/preflight.py
+          python scripts/secret_scan.py
+      - name: Dependency vulnerability check (prod-only report)
+        run: |
+          npm audit --omit=dev --json > evidence/ci_npm_audit_prod.json || true
+          node -e "const r=JSON.parse(require('fs').readFileSync('evidence/ci_npm_audit_prod.json','utf8'));console.log('Prod audit counts:',r.metadata?.vulnerabilities);"
+      - name: Production build
+        run: npm run build
+      - name: Browser E2E, mobile responsive & security/a11y smoke test
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_security_a11y.py --browser chromium
+      - name: Upload build & QA artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gapwise-ci-artifacts
+          path: |
+            dist/
+            evidence/browser_smoke.json
+            evidence/browser_security_a11y.json
+            evidence/PER_CASE_RESULTS.csv
+            evidence/METRICS_SUMMARY.json
+            evidence/REAL_WORLD_RESULTS.csv
+            evidence/real_world_eval.json
+            evidence/EVAL_BALANCED_RESULTS.csv
+            evidence/EVAL_BALANCED_SUMMARY.json
+            evidence/EVAL_ADAPTIVE_RESULTS.csv
+            evidence/EVAL_ADAPTIVE_SUMMARY.json
+            evidence/SAFETY_COUNTEREXAMPLES.json
+            evidence/ci_npm_audit_prod.json
+            evidence/desktop.png
+            evidence/tablet.png
+            evidence/mobile.png
+            evidence/mobile_360.png
+
+  android-build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Make Gradle wrapper executable
+        run: chmod +x android/gradlew
+      - name: Android JVM unit tests (Engine, SourceAuditor, Golden Parity, ViewModel)
+        run: cd android && ./gradlew :app:testDebugUnitTest --no-daemon
+      - name: Android Lint, Debug & Release APK compilation check (without secret google-services.json)
+        run: cd android && ./gradlew :app:lintDebug :app:assembleDebug :app:assembleRelease --no-daemon
+      - name: Upload Android test, lint & debug APK artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gapwise-android-ci-artifacts
+          path: |
+            android/app/build/reports/tests/
+            android/app/build/reports/lint-results-debug.html
+            android/app/build/outputs/apk/debug/app-debug.apk
