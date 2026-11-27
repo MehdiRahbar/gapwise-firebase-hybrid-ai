@@ -13,7 +13,8 @@ OUT_DIR = ROOT / 'evidence'
 OUT_DIR.mkdir(exist_ok=True)
 _win_node = Path(os.environ.get('LOCALAPPDATA', ''), 'Programs', 'NodeJS-24.20.0', 'node-v24.20.0-win-x64', 'node.exe')
 NODE_EXE = str(_win_node) if _win_node.is_file() else (shutil.which('node.exe' if os.name == 'nt' else 'node') or 'node')
-BACKUP_DIR = Path(r'C:\Projects\GAPWISE\_backups\GAPWISE_v10_PRE_AUDIT_7ba5ae5')
+_backup_env = os.environ.get('GAPWISE_BACKUP_DIR', '')
+BACKUP_DIR = Path(_backup_env) if _backup_env else None
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pregithub_blind_100 import build_blind_suite  # noqa: E402
@@ -171,7 +172,7 @@ def main():
     gt = [c['ground_truth'] for c in suite]
 
     args = [NODE_EXE, str(ROOT / 'evaluation' / 'pregithub_runner.mjs')]
-    if (BACKUP_DIR / 'web' / 'source-audit.mjs').is_file():
+    if BACKUP_DIR and (BACKUP_DIR / 'web' / 'source-audit.mjs').is_file():
         args.append(f'--backup={BACKUP_DIR.as_posix()}')
 
     proc = subprocess.run(

@@ -25,7 +25,7 @@ from playwright.sync_api import Page, TimeoutError as PlaywrightTimeoutError, sy
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = Path(os.environ.get("GAPWISE_LIVE_AUDIT_OUT", r"C:\Projects\GAPWISE\_live_site_audit_20261125"))
+OUT = Path(os.environ.get("GAPWISE_LIVE_AUDIT_OUT", str(ROOT / "_live_site_audit_output")))
 OUT.mkdir(parents=True, exist_ok=True)
 LIVE_URLS = [
     url.strip()
