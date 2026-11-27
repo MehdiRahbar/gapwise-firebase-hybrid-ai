@@ -78,6 +78,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - uses: android-actions/setup-android@v3
+        with:
+          # setup-android@v3's historical default includes the removed SDK
+          # package named `tools`; install only packages available to current
+          # command-line tools and required by compileSdk 35.
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0"
       - name: Make Gradle wrapper executable
         run: chmod +x android/gradlew
       - name: Android JVM unit tests (Engine, SourceAuditor, Golden Parity, ViewModel)
