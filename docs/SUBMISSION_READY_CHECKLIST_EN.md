@@ -15,13 +15,13 @@
 - [x] Correct the Premium video claim to cite Laptop 2 evidence and the JavaScript model-version limitation.
 - [x] Produce a safe thumbnail with no local URL, device identifier, or obsolete categorical claim.
 - [x] Corrected Premium video uploaded to YouTube as Public; English subtitle track published in Studio.
-- [ ] Submit Devpost after owner-only legal/eligibility attestations.
+- [x] Submit Devpost after owner-only legal/eligibility attestations (public submission badge observed 2026-11-27; private track/eligibility checkboxes remain owner-verified).
 
 ## Publication identifiers
 
-- GitHub URL: <https://github.com/MehdiRahbar/gapwise-firebase-hybrid-ai>
+- GitHub URL: <https://github.com/MehdiRahbar/gapwise-firebase-hybrid-ai> (`main` baseline: `31bdea2d64e86dfa6319e12ea26f4737343b8649`)
 - YouTube URL: <https://youtu.be/sEtk_Cvqax0>
-- Devpost: `DRAFT READY — NOT SUBMITTED`
+- Devpost: `SUBMITTED — #BuildHybridAI 2026` (<https://devpost.com/software/gapwise-find-what-s-missing-before-you-decide>)
 - Live URL: <https://gapwise-hybrid-2026.web.app/>
 
 ## Original history policy

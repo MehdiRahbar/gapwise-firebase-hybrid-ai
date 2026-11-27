@@ -2,7 +2,7 @@
 
 ## Publication status
 
-`SUBMISSION_READY — PUBLIC_LINKS_VERIFIED; DEVPOST_OWNER_GATE_REMAINS`
+`SUBMITTED_TO_CONTEST — PUBLIC_LINKS_VERIFIED`
 
 The corrected video states the evidence provenance precisely: real Firebase AI Logic on-device inference, Chrome v4 / Gemma 4 component and manifest evidence from Laptop 2, eight successful requests across two runs, and the JavaScript model-version limitation.
 
@@ -10,9 +10,9 @@ The corrected video states the evidence provenance precisely: real Firebase AI L
 
 - Live application: <https://gapwise-hybrid-2026.web.app/>
 - Alternate live application: <https://gapwise-hybrid-2026.firebaseapp.com/>
-- GitHub repository: <https://github.com/MehdiRahbar/gapwise-firebase-hybrid-ai>
+- GitHub repository: <https://github.com/MehdiRahbar/gapwise-firebase-hybrid-ai> (`main` baseline: `31bdea2d64e86dfa6319e12ea26f4737343b8649`)
 - YouTube video: <https://youtu.be/sEtk_Cvqax0>
-- Devpost submission: Draft prepared; final legal/eligibility attestations and Submit remain owner-only.
+- Devpost submission: <https://devpost.com/software/gapwise-find-what-s-missing-before-you-decide> (`Submitted to #BuildHybridAI 2026` publicly visible; private logged-in submission form fields/attestations remain owner-only).
 
 ## What GAPWISE does
 
