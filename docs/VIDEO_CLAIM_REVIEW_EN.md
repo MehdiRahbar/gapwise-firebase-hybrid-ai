@@ -4,18 +4,19 @@
 
 The current V2 exports are 156.000 seconds, 1920x1080, 30 fps, H.264 video, and 48 kHz stereo AAC. Full decode completed successfully for the Premium, Captions-only, and Clean exports. Raw footage was not changed.
 
-## Blocking claim
+## Corrected claim
 
-The closing card and related narration/subtitles state that Gemini Nano 4 / Gemma 4 was verified and ready. The current evidence record instead reports:
+The original closing card and S08 narration used the categorical label `NANO4_VERIFIED`. The corrected cut replaces it with:
 
-- current desktop device model label: `nano_v3_cpu_component` / `v3Nano`;
-- Gemma 4 component: not installed/pending;
-- current Nano 4 hardware status: unavailable and unverified on the recorded cloud stub;
-- a separate live `ONLY_ON_DEVICE` run reported `inferenceSource=on_device`, but the SDK model version was unreported and the record does not establish Nano 4.
+- real Firebase AI Logic `ONLY_ON_DEVICE` inference;
+- eight successful requests across two recorded desktop runs;
+- Chrome v4 / Gemma 4 component and manifest evidence from Laptop 2;
+- the exact limitation that JavaScript reported `modelVersion = null` / unreported;
+- an explicit statement that this is evidence-based identification, not Google certification.
 
-Therefore the video is not upload-ready as-is. This is a claims-integrity blocker, not a media-container failure.
+This is a claims correction, not a change to the raw footage or the recorded inference results.
 
 ## Required owner decision
 
-Either correct the narration, subtitles, and closing card to describe the verified on-device path without naming Nano 4, or attach a contemporaneous, independently reviewable Nano 4 artifact that exactly supports the existing claim. Do not alter or discard the original raw footage. No re-render was performed during this preparation pass.
+The corrected export is ready for owner review. Do not alter or discard the original raw footage. The final corrected Premium file and its fresh QA report are in the corrected V3 output set.
 

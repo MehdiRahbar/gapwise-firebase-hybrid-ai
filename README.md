@@ -18,7 +18,7 @@ The Web application is a Vite single-page application under `web/`.
 4. `ONLY_ON_DEVICE` is fail-closed. It uses the browser's Prompt API adapter when available and refuses cloud fallback when the local model is unavailable.
 5. Cloud inference is opt-in through the UI and requires App Check configuration. The public build does not contain an App Check debug token.
 
-The verified device evidence retained for this project is separate from this public source export. It must not be interpreted as a claim that Gemini Nano 4 is available on every Chrome device. On unsupported hardware, the sample workflow and deterministic gate remain usable, while on-device inference is reported as unavailable.
+The verified device evidence was captured on the second laptop and is separate from this public source export. It records eight successful Firebase AI Logic `ONLY_ON_DEVICE` requests across two runs. Chrome Internals/component-store evidence identifies the Chrome v4 / Gemma 4 component used for the Gemini Nano 4 path; JavaScript itself reported the adapter but not an exact model version. This is evidence-based provenance, not Google certification, and it is not a claim that Nano 4 is available on every Chrome device.
 
 ## Reproducible Web setup
 
@@ -56,4 +56,6 @@ If Chrome reports that the on-device model is unavailable, this is an expected c
 This public export is prepared from a clean source tree without the original repository's unsanitized Git history, private evidence, Chrome profiles, generated build folders, or credentials. The project is licensed under Apache-2.0; see [LICENSE](LICENSE).
 
 See [docs/ARCHITECTURE_EN.md](docs/ARCHITECTURE_EN.md), [docs/PUBLIC_VERIFICATION_2026-11-25.md](docs/PUBLIC_VERIFICATION_2026-11-25.md), and [SECURITY.md](SECURITY.md) for technical and release details.
+
+See [docs/NANO4_EVIDENCE_RECONCILIATION_EN.md](docs/NANO4_EVIDENCE_RECONCILIATION_EN.md) for the exact evidence boundary.
 

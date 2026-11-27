@@ -2,9 +2,9 @@
 
 ## Upload status
 
-`BLOCKED_PENDING_VIDEO_CLAIM_CORRECTION`
+`READY_FOR_OWNER_REVIEW — CORRECTED_EVIDENCE_CLAIMS`
 
-The video assets are technically valid, but the current closing card makes a Nano 4 verification claim that is not supported by the current evidence record. Do not upload until the claim is corrected or a matching verified artifact is attached.
+The corrected video preserves the real on-device Firebase AI Logic evidence and explains the Chrome component/manifest provenance and JavaScript model-version limitation.
 
 ## Proposed title
 
@@ -22,7 +22,7 @@ Judging notes:
 - The sample workflow is deterministic and remains usable without Nano or a paid account.
 - On unsupported Chrome hardware, the app reports on-device unavailability and does not silently claim Nano output.
 - Cloud-capable inference requires explicit consent and the project’s App Check configuration.
-- Separate controlled evidence exists for an on-device Prompt API path, but the current device record does not verify Gemini Nano 4 availability. Nano 4 is not claimed as universally available.
+- Separate controlled evidence from Laptop 2 records eight successful `ONLY_ON_DEVICE` Firebase AI Logic requests across two runs. Chrome v4 / Gemma 4 component and manifest evidence supports the Gemini Nano 4 identification; JavaScript reports the adapter but not an exact model version. This is not Google certification and Nano 4 is not claimed as universally available.
 
 License: Apache-2.0.
 
@@ -32,5 +32,5 @@ License: Apache-2.0.
 
 ## Suggested thumbnail
 
-Do not use the existing `THUMBNAIL_GAPWISE_V2.jpg` or `THUMBNAIL_GAPWISE_V2_CLOSING.jpg` without correction: they expose a local URL or contain the unsupported `NANO4_VERIFIED` claim. A safe thumbnail must use the GAPWISE brand and evidence-first message without a Nano 4 verification assertion.
+Use the corrected safe thumbnail from the local submission staging package. Do not use the older candidates: one exposes a local URL and the other contains the obsolete `NANO4_VERIFIED` wording.
 

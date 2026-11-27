@@ -12,8 +12,8 @@
 - [x] Video files and hashes staged for owner review.
 - [x] No Nano 4 inference, billing change, Firebase Production change, GitHub publication, YouTube upload, or Devpost submission performed in this pass.
 - [ ] Create and publish the GitHub repository after owner approval.
-- [ ] Correct or substantiate the Premium video Nano 4 claim.
-- [ ] Produce a safe thumbnail with no local URL, device identifier, or unsupported Nano 4 assertion.
+- [x] Correct the Premium video claim to cite Laptop 2 evidence and the JavaScript model-version limitation.
+- [x] Produce a safe thumbnail with no local URL, device identifier, or obsolete categorical claim.
 - [ ] Upload YouTube after the video claim review passes.
 - [ ] Submit Devpost after all public links are live and owner approves.
 

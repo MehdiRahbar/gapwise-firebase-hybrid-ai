@@ -2,9 +2,9 @@
 
 ## Publication status
 
-`READY_FOR_OWNER_REVIEW — BLOCKED_BY_VIDEO_CLAIM_REVIEW`
+`READY_FOR_OWNER_REVIEW — VIDEO_CLAIM_CORRECTED`
 
-The draft is prepared, but the final video must not be uploaded as-is because its closing card says `NANO4_VERIFIED`, while the current evidence record does not verify Nano 4 on the current device. Correct the narration/subtitles/card or attach a verified artifact before publication.
+The corrected video states the evidence provenance precisely: real Firebase AI Logic on-device inference, Chrome v4 / Gemma 4 component and manifest evidence from Laptop 2, eight successful requests across two runs, and the JavaScript model-version limitation.
 
 ## Links
 
@@ -30,7 +30,7 @@ GAPWISE is an evidence-first decision workbench for policies and source document
 
 ## Evidence and limitations
 
-The public live-site audit passed with HTTP 200, matching audited assets, no console/page errors, and successful sample workflows. Separate controlled evidence records an on-device Prompt API path on a supported test environment, but current-device evidence reports `v3Nano`/unreported SDK version and does not verify Nano 4 availability on this laptop. Nano 4 support is therefore not claimed for every judge or device.
+The public live-site audit passed with HTTP 200, matching audited assets, no console/page errors, and successful sample workflows. Separate controlled evidence from Laptop 2 records the real on-device path and the Chrome v4 / Gemma 4 component identity. The JavaScript model version remains unreported, so the product identification is evidence-based provenance rather than official Google certification. Nano 4 support is not claimed for every judge or device.
 
 The deterministic workflow is the reproducible fallback and is not misrepresented as real Nano inference. No billing, production configuration change, or new Nano 4 inference was performed during final submission preparation.
 
