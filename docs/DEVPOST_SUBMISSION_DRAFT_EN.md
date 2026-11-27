@@ -2,7 +2,7 @@
 
 ## Publication status
 
-`READY_FOR_OWNER_REVIEW — VIDEO_CLAIM_CORRECTED`
+`SUBMISSION_READY — PUBLIC_LINKS_VERIFIED; DEVPOST_OWNER_GATE_REMAINS`
 
 The corrected video states the evidence provenance precisely: real Firebase AI Logic on-device inference, Chrome v4 / Gemma 4 component and manifest evidence from Laptop 2, eight successful requests across two runs, and the JavaScript model-version limitation.
 
@@ -10,9 +10,9 @@ The corrected video states the evidence provenance precisely: real Firebase AI L
 
 - Live application: <https://gapwise-hybrid-2026.web.app/>
 - Alternate live application: <https://gapwise-hybrid-2026.firebaseapp.com/>
-- GitHub repository: `NOT_CREATED_YET — owner publication approval required`
-- YouTube video: `NOT_UPLOADED_YET — blocked pending video claim correction`
-- Devpost submission: `DRAFT ONLY — not submitted`
+- GitHub repository: <https://github.com/MehdiRahbar/gapwise-firebase-hybrid-ai>
+- YouTube video: <https://youtu.be/sEtk_Cvqax0>
+- Devpost submission: Draft prepared; final legal/eligibility attestations and Submit remain owner-only.
 
 ## What GAPWISE does
 

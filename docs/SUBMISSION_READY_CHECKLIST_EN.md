@@ -10,18 +10,18 @@
 - [x] Devpost English draft prepared.
 - [x] YouTube metadata draft prepared.
 - [x] Video files and hashes staged for owner review.
-- [x] No Nano 4 inference, billing change, Firebase Production change, GitHub publication, YouTube upload, or Devpost submission performed in this pass.
-- [ ] Create and publish the GitHub repository after owner approval.
+- [x] No Nano 4 inference, billing change, or Firebase Production change performed in this pass.
+- [x] Clean public GitHub repository published from the sanitized export.
 - [x] Correct the Premium video claim to cite Laptop 2 evidence and the JavaScript model-version limitation.
 - [x] Produce a safe thumbnail with no local URL, device identifier, or obsolete categorical claim.
-- [ ] Upload YouTube after the video claim review passes.
-- [ ] Submit Devpost after all public links are live and owner approves.
+- [x] Corrected Premium video uploaded to YouTube as Public; English subtitle track published in Studio.
+- [ ] Submit Devpost after owner-only legal/eligibility attestations.
 
 ## Publication identifiers
 
-- GitHub URL: `NOT_CREATED_YET`
-- YouTube URL: `NOT_UPLOADED_YET`
-- Devpost: `DRAFT ONLY — NOT SUBMITTED`
+- GitHub URL: <https://github.com/MehdiRahbar/gapwise-firebase-hybrid-ai>
+- YouTube URL: <https://youtu.be/sEtk_Cvqax0>
+- Devpost: `DRAFT READY — NOT SUBMITTED`
 - Live URL: <https://gapwise-hybrid-2026.web.app/>
 
 ## Original history policy
