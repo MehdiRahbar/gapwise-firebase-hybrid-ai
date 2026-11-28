@@ -79,6 +79,7 @@ function decisionEvidence() {
 
 const coordinator = createRequestCoordinator();
 let activeTickTimer = null;
+let pendingSimpleReveal = null;
 
 function clearAnalyzeUi() {
   if (activeTickTimer) {
@@ -489,6 +490,24 @@ function render() {
     `<span class="metric ${ev.coverageReviewed ? 'pass' : 'warn'}">Coverage: ${ev.coverageReviewed ? 'human-attested' : 'unverified'}</span>`;
 
   renderProposals();
+  if ($('requiredSummaryHint')) $('requiredSummaryHint').textContent = `${ev.missing.length} missing · ${ev.answered}/${ev.total} answered`;
+  if ($('sourceSummaryHint')) {
+    $('sourceSummaryHint').textContent = ev.sourcePresent
+      ? ev.coverageReviewed
+        ? 'Source provided · coverage attested'
+        : 'Source provided · review pending'
+      : 'Source missing';
+  }
+  if ($('reviewSummaryHint')) $('reviewSummaryHint').textContent = `${ev.pendingReviews} to review`;
+  if ($('evidenceSummaryHint')) $('evidenceSummaryHint').textContent = `${ev.answered} answered · ${ev.pendingReviews} pending`;
+  if ($('sampleSummaryHint')) $('sampleSummaryHint').textContent = `${SAMPLE_POLICIES.length} cases`;
+  if ($('simpleStatus')) $('simpleStatus').textContent = `Decision status: ${ev.statusLabel} · ${plan.statusSummary}`;
+  if ($('simpleProvenance')) $('simpleProvenance').textContent = `Inference provenance: ${processingModeText()}.`;
+  if (pendingSimpleReveal && document.body.dataset.view === 'simple') {
+    const target = $(pendingSimpleReveal);
+    if (target) target.open = true;
+    pendingSimpleReveal = null;
+  }
 }
 
 function addRequirement(label, reason = '', reference = '') {
@@ -586,6 +605,7 @@ async function analyze() {
           });
         }
       }
+      if (pending().length && document.body.dataset.view === 'simple') pendingSimpleReveal = 'source-audit-step';
       const extras = [...(r.parsed.possible_missing_categories || []), ...(r.parsed.unsupported_assumptions || [])];
       $('aiProgress').textContent = `Live Firebase inference: ${r.source} · ${r.elapsedMs}ms · adapter:${r.adapterLabel} · version:${r.modelVersion || 'unreported'} · err:${r.errorClass}; ${r.parsed.parse_error ? 'response malformed (fail-closed)' : ''}`.trim();
       log('Live AI inference', `${r.source} (${r.modelId}), ${processed.suggestions.length} proposals, ${extras.length} caution categories`);
@@ -598,6 +618,7 @@ async function analyze() {
       const audit = analyzeSourceDocument(state.sourceText, state.policy, { maxCandidates: 24, includeUnclassified: true });
       state.sourceAudit = audit;
       for (const x of audit.candidates.filter((c) => !c.matchedExisting)) enqueue(x);
+      if (pending().length && document.body.dataset.view === 'simple') pendingSimpleReveal = 'source-audit-step';
       $('modelSuggestions').hidden = false;
       $('modelSuggestions').innerHTML =
         '<h3>Heuristic document scan only — no AI invoked</h3><p>The local text scanner uses non-exhaustive heuristic cues. Review each item before deciding. Connect Firebase for hybrid AI inference.</p>';
@@ -1109,6 +1130,57 @@ document.addEventListener('keydown', (event) => {
 
 mobileNavQuery.addEventListener?.('change', syncNavMode);
 syncNavMode();
+
+const VIEW_STORAGE_KEY = 'gapwise.ui.view';
+const viewSimpleBtn = $('viewSimpleBtn');
+const viewAdvancedBtn = $('viewAdvancedBtn');
+
+function readSavedView() {
+  try {
+    return window.localStorage.getItem(VIEW_STORAGE_KEY) === 'simple' ? 'simple' : 'advanced';
+  } catch {
+    return 'advanced';
+  }
+}
+
+function saveView(view) {
+  try {
+    window.localStorage.setItem(VIEW_STORAGE_KEY, view);
+  } catch {
+    // Storage can be disabled by privacy settings; the current session still works.
+  }
+}
+
+function syncAccordionA11y(details) {
+  details.querySelector(':scope > summary')?.setAttribute('aria-expanded', String(details.open));
+}
+
+function applyViewMode(view, { persist = true, announce = true } = {}) {
+  const next = view === 'simple' ? 'simple' : 'advanced';
+  const previous = document.body.dataset.view || 'advanced';
+  document.body.dataset.view = next;
+  syncNavMode();
+  viewSimpleBtn?.setAttribute('aria-pressed', String(next === 'simple'));
+  viewAdvancedBtn?.setAttribute('aria-pressed', String(next === 'advanced'));
+  viewSimpleBtn?.classList.toggle('active', next === 'simple');
+  viewAdvancedBtn?.classList.toggle('active', next === 'advanced');
+  if (persist) saveView(next);
+  if (previous !== next) {
+    document.querySelectorAll('.simple-accordion').forEach((details) => {
+      details.open = next === 'advanced';
+    });
+  }
+  document.querySelectorAll('.simple-accordion').forEach(syncAccordionA11y);
+  if (announce && $('viewModeStatus')) $('viewModeStatus').textContent = `${next === 'simple' ? 'Simple' : 'Advanced'} interface selected.`;
+}
+
+document.querySelectorAll('.simple-accordion').forEach((details) => {
+  syncAccordionA11y(details);
+  details.addEventListener('toggle', () => syncAccordionA11y(details));
+});
+viewSimpleBtn?.addEventListener('click', () => applyViewMode('simple'));
+viewAdvancedBtn?.addEventListener('click', () => applyViewMode('advanced'));
+applyViewMode(readSavedView(), { persist: false, announce: false });
 
 reset(0);
 syncConnectivityBanner();

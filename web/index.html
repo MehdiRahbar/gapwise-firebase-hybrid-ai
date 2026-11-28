@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="./assets/gapwise-logo.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-view="advanced">
   <div class="shell">
     <header class="topbar" id="topbar">
       <div class="topbar-leading">
@@ -20,6 +20,11 @@
       <div class="top-nav">
         <span class="pill">BUILD HYBRID AI 2026</span>
         <span class="status-pill" id="modeBadge" aria-live="polite">● DETERMINISTIC DEMO</span>
+        <div class="mode-switch" role="group" aria-label="Interface mode">
+          <button id="viewSimpleBtn" type="button" class="mode-option" aria-pressed="false">Simple</button>
+          <button id="viewAdvancedBtn" type="button" class="mode-option active" aria-pressed="true">Advanced</button>
+        </div>
+        <span id="viewModeStatus" class="sr-only" role="status" aria-live="polite"></span>
         <button id="settingsBtn" type="button" class="outline tiny">Settings <span aria-hidden="true">⌄</span></button>
       </div>
     </header>
@@ -38,10 +43,10 @@
           <button type="button" class="nav-item" data-nav-action="settings"><span class="nav-icon" aria-hidden="true">⚙</span><span class="nav-label">Settings</span></button>
         </nav>
         <div class="drawer-divider"></div>
-        <div class="drawer-section" id="sample-cases">
-          <div class="section-label">DEMO CASES</div>
+        <details class="drawer-section simple-accordion" id="sample-cases" open>
+          <summary><span class="section-label">DEMO CASES</span><span id="sampleSummaryHint" class="summary-hint">3 cases</span></summary>
         <div id="examples" class="example-list"></div>
-        </div>
+        </details>
         <div class="tip">
           <span aria-hidden="true">◆</span>
           <strong>Why this matters</strong>
@@ -84,23 +89,28 @@
             <button type="button" class="outline tiny" id="cancelAnalyzeBtn" hidden>Stop waiting</button>
             <span id="aiProgress" class="smalltext" role="status" aria-live="polite">Rules &amp; heuristic scan only until Firebase is connected.</span>
           </div>
+          <p id="simpleProvenance" class="simple-provenance smalltext" role="status" aria-live="polite">Inference provenance: deterministic demo; no model call.</p>
+          <p id="simpleStatus" class="simple-status smalltext" role="status" aria-live="polite">Decision status: More information required.</p>
           <div id="modelSuggestions" class="suggestions" hidden></div>
         </div>
 
-        <div class="panel" id="checklist-step">
-          <div class="panel-top">
-            <div><span class="step-number">02</span><span class="section-label">VERIFY</span></div>
-            <span id="progressLabel" class="marker">0 answered</span>
-          </div>
+        <details class="panel simple-accordion" id="checklist-step" open>
+          <summary class="simple-section-summary">
+            <div class="panel-top">
+              <div><span class="step-number">02</span><span class="section-label">VERIFY</span></div>
+              <span id="progressLabel" class="marker">0 / 0 answered</span>
+            </div>
           <h2>What must be true?</h2>
+            <span id="requiredSummaryHint" class="summary-hint">Ready</span>
+          </summary>
           <p class="caption" id="sourceLabel"></p>
           <div id="checklist" class="checklist"></div>
           <div class="add-line">
             <input id="extraCondition" dir="auto" placeholder="Add another required condition missed by the model…" aria-label="Add extra requirement" maxlength="300">
             <button type="button" class="outline" id="addConditionBtn">+ Add condition</button>
           </div>
-          <details class="source-details" id="sourceDetails" open>
-            <summary>Independent source and coverage controls</summary>
+          <details class="source-details simple-accordion" id="sourceDetails" open>
+            <summary><span>Independent source and coverage controls</span><span id="sourceSummaryHint" class="summary-hint">Source missing</span></summary>
             <p>Paste policy text or upload a .txt/.md file. The local scanner is heuristic (non-exhaustive) and AI proposals stay untrusted until reviewed.</p>
             <div class="actions">
               <button type="button" id="loadSampleSourceBtn" class="outline tiny">Load fictional sample document</button>
@@ -120,28 +130,31 @@
               <p>Positive verdicts NEVER come from autonomous AI certainty. Checking these boxes asserts that (1) you manually confirmed the supplied source is genuine and applicable, (2) you reviewed every pending scan/AI suggestion, and (3) any <code>YES</code> remains a case-versioned <code>CONDITIONAL · HUMAN-ATTESTED</code> record (not cryptographic proof or exhaustive world knowledge) that invalidates automatically on edit.</p>
             </div>
           </details>
-        </div>
+        </details>
 
-        <div class="panel" id="source-audit-step">
-          <div class="panel-top">
-            <div><span class="step-number">03</span><span class="section-label">REVIEW</span></div>
-            <span class="marker" id="reviewCounter">0 awaiting review</span>
-          </div>
+        <details class="panel simple-accordion" id="source-audit-step" open>
+          <summary class="simple-section-summary">
+            <div class="panel-top">
+              <div><span class="step-number">03</span><span class="section-label">REVIEW</span></div>
+              <span class="marker" id="reviewCounter">0 awaiting review</span>
+            </div>
           <h2>Potential conditions missing from your checklist</h2>
+            <span id="reviewSummaryHint" class="summary-hint">Ready</span>
+          </summary>
           <p class="caption">Extracted clauses and AI output are untrusted suggestions. Review, add as unknown, or dismiss with a reason. They never set a fact to Yes.</p>
           <div id="reviewQueue"></div>
-        </div>
+        </details>
 
         <div class="result" id="result" role="status" aria-live="polite"></div>
       </main>
 
       <aside class="right-rail" id="evidence-section" aria-label="Adaptive inquiry, evidence trail and history">
-        <div class="rail-col-primary" id="adaptive-section">
-          <div class="rail-heading"><span class="section-label">04 / ADAPTIVE INQUIRY</span><span id="adaptiveSummaryPill" class="smalltext"></span></div>
+        <details class="rail-col-primary simple-accordion" id="adaptive-section" open>
+          <summary class="rail-heading"><span class="section-label">04 / ADAPTIVE INQUIRY</span><span id="adaptiveSummaryPill" class="smalltext"></span></summary>
           <div id="nextQuestion" class="next-card"></div>
-        </div>
-        <div class="rail-col-secondary">
-          <div class="rail-heading"><span class="section-label">EVIDENCE &amp; HISTORY</span></div>
+        </details>
+        <details class="rail-col-secondary simple-accordion" id="evidence-history-section" open>
+          <summary class="rail-heading"><span class="section-label">EVIDENCE &amp; HISTORY</span><span id="evidenceSummaryHint" class="summary-hint">Ready</span></summary>
           <div id="evidenceTrail" class="evidence-trail"></div>
           <div id="evidenceHealth" class="evidence-health"></div>
           <div class="rail-heading" style="margin-top:20px"><span class="section-label">DECISION HISTORY</span></div>
@@ -149,7 +162,7 @@
           <button type="button" id="exportBtn" class="outline export">⇩ Export transparent audit</button>
           <div id="exportStatus" class="smalltext export-status" aria-live="polite"></div>
           <div class="side-footer">Evidence grounded. Certainty bounded.<br><span>Research prototype • not a universal proof</span></div>
-        </div>
+        </details>
       </aside>
     </div>
 
